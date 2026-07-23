@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://db.onlinewebfonts.com/c/dec0d9b4e22ca588dc20e1e2e09a59b5?family=Neue+Haas+Grotesk+Display+Pro+55+Roman" rel="stylesheet" />
+<link href="https://db.onlinewebfonts.com/c/6e47ef470dd19698c911332a9b4d1cf4?family=Neue+Haas+Grotesk+Text+Pro" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+  body {
+    font-family: 'Neue Haas Grotesk Display Pro 55 Roman','Neue Haas Grotesk Text Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #1f2a1d;
+    background: #f4f1e9;
+  }
+  a { color: #336443; text-decoration: none; }
+  a:hover { color: #1f2a1d; }
+  ::selection { background: #85AB8B; color: #1f2a1d; }
+  @keyframes hgFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+</style>
+</helmet>
+
+<div style="width:100%; overflow-x:hidden;">
+
+  <!-- ===================== HERO ===================== -->
+  <section id="home" style="position:relative; width:100%; min-height:100vh; overflow:hidden; display:flex; flex-direction:column;">
+    <div style="position:absolute; inset:0; width:100%; height:100%;">
+      <video id="hg-video" muted playsinline preload="auto" crossorigin="anonymous"
+        style="width:100%; height:100%; object-fit:cover; display:block;"></video>
+      <canvas id="hg-canvas" style="width:100%; height:100%; object-fit:cover; display:none; position:absolute; inset:0;"></canvas>
+      <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(244,241,233,0.35) 0%, rgba(244,241,233,0) 25%, rgba(31,42,29,0.15) 78%, rgba(31,42,29,0.42) 100%);"></div>
+    </div>
+
+    <!-- NAV -->
+    <nav style="position:relative; z-index:30; display:flex; align-items:center; justify-content:space-between; padding:20px 24px;">
+      <a href="#home" style="display:flex; align-items:baseline; gap:2px; color:#1f2a1d;">
+        <span style="font-size:22px; font-weight:600; letter-spacing:-0.02em;">Horizon Gardens</span>
+        <sup style="font-size:11px; font-weight:500;">&reg;</sup>
+      </a>
+
+      <div class="hg-desktop-nav" style="display:none; align-items:center; gap:4px; background:rgba(255,255,255,0.7); backdrop-filter:blur(12px); border-radius:999px; padding:5px 6px 5px 24px; box-shadow:0 4px 14px rgba(31,42,29,0.08); border:1px solid rgba(255,255,255,0.6);">
+        <a href="#home" style="font-size:14px; padding:8px 12px; font-weight:600; color:#1f2a1d;">Home</a>
+        <a href="#about" style="font-size:14px; padding:8px 12px; font-weight:500; color:#4b5b47;">About</a>
+        <a href="#products" style="font-size:14px; padding:8px 12px; font-weight:500; color:#4b5b47;">Products</a>
+        <a href="#contact" style="font-size:14px; padding:8px 12px; font-weight:500; color:#4b5b47;">Contact</a>
+        <a href="#contact" style="margin-left:8px; background:#1f2a1d; color:#fff; font-size:14px; font-weight:500; padding:10px 20px; border-radius:999px; transition:background .15s;" style-hover="background:#2a3827; color:#fff;">Visit the Yard</a>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:16px; color:#2d3a2a;">
+        <a href="tel:5615266716" class="hg-nav-phone" style="display:none; align-items:center; gap:8px; font-size:14px; font-weight:500; color:#2d3a2a;" style-hover="opacity:0.8;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (561) 526-6716
+        </a>
+        <button onClick="{{ toggleMenu }}" aria-label="Toggle menu"
+          style="display:flex; align-items:center; justify-content:center; width:42px; height:42px; border:1px solid rgba(255,255,255,0.6); background:rgba(255,255,255,0.7); backdrop-filter:blur(12px); border-radius:999px; color:#1f2a1d; cursor:pointer; position:relative;"
+          class="hg-menu-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="{{ menuIconStyle }}"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="{{ closeIconStyle }}"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- HERO COPY -->
+    <div style="position:relative; z-index:10; display:flex; flex-direction:column; align-items:center; text-align:center; padding:56px 24px 0; flex:1;">
+      <h1 style="font-weight:400; line-height:0.98; color:#336443; font-size:clamp(2.1rem, 6vw, 5.25rem); max-width:1000px; letter-spacing:-0.035em; margin:0; text-wrap:balance;">
+        Your South Florida <span style="color:#85AB8B;">landscape<br style="display:none;" class="hg-br"/> supply yard</span>
+      </h1>
+      <p style="margin:26px auto 0; color:#4b5b47; font-size:clamp(0.95rem,1.6vw,1.15rem); line-height:1.6; max-width:520px;">
+        Pro-grade plants, flowers, mulch, and bulk materials from a team that uses them on the job every day. Open to everyone.
+      </p>
+      <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:32px;">
+        <a href="#contact" style="background:#1f2a1d; color:#fff; font-size:15px; font-weight:500; padding:14px 28px; border-radius:999px; box-shadow:0 6px 18px rgba(31,42,29,0.18); transition:background .15s;" style-hover="background:#2a3827; color:#fff;">Visit the Yard</a>
+        <a href="tel:5615266716" style="display:flex; align-items:center; gap:8px; background:rgba(255,255,255,0.75); backdrop-filter:blur(10px); color:#1f2a1d; font-size:15px; font-weight:500; padding:14px 24px; border-radius:999px; border:1px solid rgba(255,255,255,0.6); transition:background .15s;" style-hover="background:rgba(255,255,255,0.95); color:#1f2a1d;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call (561) 526-6716
+        </a>
+      </div>
+    </div>
+
+    <!-- BOTTOM-LEFT BLOCK -->
+    <div style="position:relative; z-index:10; margin:auto 0 0; padding:0 24px 28px; max-width:400px;">
+      <div style="display:flex; align-items:center; gap:8px; color:#fff; margin-bottom:12px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+        <span style="font-size:14px; font-weight:600;">Grown &amp; Sourced Locally</span>
+      </div>
+      <p style="color:rgba(255,255,255,0.9); font-size:13px; line-height:1.55; margin:0 0 22px; max-width:320px;">
+        We stock the same pro-grade plants, mulch, and materials our own crew trusts on the job &mdash; ready for pickup or delivery across Palm Beach County.
+      </p>
+      <div style="display:flex; align-items:center; gap:18px; flex-wrap:wrap;">
+        <a href="#products" style="background:#fff; color:#1f2a1d; font-size:14px; font-weight:600; padding:12px 24px; border-radius:999px; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition:background .15s;" style-hover="background:rgba(255,255,255,0.9); color:#1f2a1d;">Browse Products</a>
+        <a href="#how" style="color:#fff; font-size:14px; font-weight:500;" style-hover="opacity:0.8; color:#fff;">Know More.</a>
+      </div>
+    </div>
+
+    <!-- BOTTOM-RIGHT -->
+    <a href="#about" class="hg-hero-right" style="display:none; position:absolute; right:24px; bottom:30px; z-index:10; align-items:center; gap:8px; color:rgba(255,255,255,0.9); font-size:14px;">
+      <span style="display:flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:999px; background:rgba(255,255,255,0.2); backdrop-filter:blur(4px);">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+      </span>
+      <span style="font-weight:500;">Our story</span>
+      <span style="color:rgba(255,255,255,0.6);">20+ yrs</span>
+    </a>
+  </section>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div onClick="{{ closeMenu }}" style="{{ overlayStyle }}"></div>
+  <div style="{{ drawerStyle }}">
+    <div style="display:flex; flex-direction:column; height:100%; padding:96px 32px 32px;">
+      <div style="display:flex; flex-direction:column; gap:2px;">
+        <a href="#home" onClick="{{ closeMenu }}" style="font-size:26px; font-weight:600; color:#1f2a1d; padding:16px 0; border-bottom:1px solid rgba(31,42,29,0.1);">Home</a>
+        <a href="#about" onClick="{{ closeMenu }}" style="font-size:26px; font-weight:600; color:#1f2a1d; padding:16px 0; border-bottom:1px solid rgba(31,42,29,0.1);">About</a>
+        <a href="#products" onClick="{{ closeMenu }}" style="font-size:26px; font-weight:600; color:#1f2a1d; padding:16px 0; border-bottom:1px solid rgba(31,42,29,0.1);">Products</a>
+        <a href="#contact" onClick="{{ closeMenu }}" style="font-size:26px; font-weight:600; color:#1f2a1d; padding:16px 0; border-bottom:1px solid rgba(31,42,29,0.1);">Contact</a>
+      </div>
+      <div style="margin-top:32px; display:flex; flex-direction:column; gap:14px;">
+        <a href="tel:5615266716" onClick="{{ closeMenu }}" style="display:flex; align-items:center; gap:8px; font-size:15px; font-weight:500; color:#2d3a2a;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (561) 526-6716
+        </a>
+        <a href="#contact" onClick="{{ closeMenu }}" style="margin-top:6px; text-align:center; background:#1f2a1d; color:#fff; font-size:15px; font-weight:600; padding:14px 20px; border-radius:999px;">Visit the Yard</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== STATS ===================== -->
+  <section style="background:#1f2a1d; color:#fff; padding:56px 24px;">
+    <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(2,1fr); gap:32px 16px;" class="hg-stats-grid">
+      <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+        <div data-reveal style="text-align:center;">
+          <div style="font-size:clamp(2.2rem,5vw,3.4rem); font-weight:600; letter-spacing:-0.03em; color:#fff; line-height:1;">{{ s.value }}</div>
+          <div style="margin-top:10px; font-size:14px; color:#85AB8B; font-weight:500;">{{ s.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ===================== HOW IT WORKS ===================== -->
+  <section id="how" style="padding:100px 24px; max-width:1200px; margin:0 auto;">
+    <div data-reveal style="text-align:center; max-width:640px; margin:0 auto 64px;">
+      <div style="font-size:13px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#85AB8B; margin-bottom:16px;">How It Works</div>
+      <h2 style="font-size:clamp(1.9rem,4vw,3rem); font-weight:400; letter-spacing:-0.03em; color:#1f2a1d; line-height:1.05; margin:0;">Three steps and you&rsquo;re on your way</h2>
+      <p style="margin:18px 0 0; color:#4b5b47; font-size:1.05rem; line-height:1.6;">Getting your landscape materials is simple.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr; gap:24px;" class="hg-steps-grid">
+      <sc-for list="{{ steps }}" as="st" hint-placeholder-count="3">
+        <div data-reveal style="background:#fff; border:1px solid rgba(31,42,29,0.08); border-radius:24px; padding:38px 32px; box-shadow:0 10px 30px rgba(31,42,29,0.05);">
+          <div style="display:flex; align-items:center; justify-content:center; width:52px; height:52px; border-radius:999px; background:#eef3ec; color:#336443; font-size:22px; font-weight:600;">{{ st.n }}</div>
+          <h3 style="margin:24px 0 12px; font-size:1.4rem; font-weight:500; color:#1f2a1d; letter-spacing:-0.02em;">{{ st.title }}</h3>
+          <p style="margin:0; color:#4b5b47; font-size:0.98rem; line-height:1.6;">{{ st.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ===================== PRODUCTS ===================== -->
+  <section id="products" style="background:#eef1e7; padding:100px 24px;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div data-reveal style="max-width:640px; margin:0 auto 60px; text-align:center;">
+        <div style="font-size:13px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#85AB8B; margin-bottom:16px;">What We Carry</div>
+        <h2 style="font-size:clamp(1.9rem,4vw,3rem); font-weight:400; letter-spacing:-0.03em; color:#1f2a1d; line-height:1.05; margin:0;">Everything for your next project, all in one yard</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:18px;" class="hg-products-grid">
+        <sc-for list="{{ products }}" as="p" hint-placeholder-count="8">
+          <div data-reveal style="background:#fff; border:1px solid rgba(31,42,29,0.07); border-radius:20px; padding:28px 26px; transition:transform .25s, box-shadow .25s;" style-hover="transform:translateY(-4px); box-shadow:0 16px 32px rgba(31,42,29,0.1);">
+            <div style="width:44px; height:44px; border-radius:12px; background:#eef3ec; display:flex; align-items:center; justify-content:center; color:#336443; margin-bottom:18px;" data-icon="{{ p.icon }}">
+              <span style="{{ p.iconHtml }}"></span>
+            </div>
+            <h3 style="margin:0 0 8px; font-size:1.15rem; font-weight:500; color:#1f2a1d; letter-spacing:-0.01em;">{{ p.title }}</h3>
+            <p style="margin:0; color:#4b5b47; font-size:0.92rem; line-height:1.55;">{{ p.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERY ===================== -->
+  <section style="padding:100px 24px; max-width:1200px; margin:0 auto;">
+    <div data-reveal style="max-width:640px; margin:0 auto 56px; text-align:center;">
+      <div style="font-size:13px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#85AB8B; margin-bottom:16px;">In The Yard</div>
+      <h2 style="font-size:clamp(1.9rem,4vw,3rem); font-weight:400; letter-spacing:-0.03em; color:#1f2a1d; line-height:1.05; margin:0;">See what&rsquo;s in the yard</h2>
+      <p style="margin:18px 0 0; color:#4b5b47; font-size:1.05rem; line-height:1.6;">Fresh plants, vibrant flowers, and bulk materials ready for pickup or delivery.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:14px;" class="hg-gallery-grid">
+      <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="6">
+        <div data-reveal style="position:relative; border-radius:18px; overflow:hidden; aspect-ratio:4/3; background:#dfe4d6;">
+          <img src="{{ g.src }}" alt="{{ g.alt }}" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s;" style-hover="transform:scale(1.06);"/>
+          <div style="position:absolute; left:0; right:0; bottom:0; padding:14px 16px; background:linear-gradient(0deg, rgba(31,42,29,0.65), rgba(31,42,29,0)); color:#fff; font-size:13px; font-weight:500;">{{ g.alt }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" style="background:#1f2a1d; color:#fff; padding:100px 24px;">
+    <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr; gap:48px; align-items:center;" class="hg-about-grid">
+      <div data-reveal>
+        <div style="font-size:13px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#85AB8B; margin-bottom:16px;">Our Story</div>
+        <h2 style="font-size:clamp(1.9rem,4vw,3rem); font-weight:400; letter-spacing:-0.03em; line-height:1.08; margin:0 0 24px; color:#fff;">Built by landscapers, open to everyone</h2>
+        <p style="color:rgba(255,255,255,0.82); font-size:1.02rem; line-height:1.7; margin:0 0 18px;">Horizon Gardens grew out of New Horizons of the Palm Beaches, a landscape and irrigation company that&rsquo;s been working across Palm Beach County for over 20 years. We got tired of settling for whatever the big box stores had in stock &mdash; so we built the supply yard we always wished existed.</p>
+        <p style="color:rgba(255,255,255,0.82); font-size:1.02rem; line-height:1.7; margin:0 0 30px;">Today, we stock the same pro-grade plants, mulch, and materials our crew trusts on the job. And we&rsquo;re open to everyone: contractors, landscapers, and homeowners who just want their yard to look great.</p>
+        <a href="#contact" style="display:inline-block; background:#fff; color:#1f2a1d; font-size:14px; font-weight:600; padding:13px 26px; border-radius:999px; transition:background .15s;" style-hover="background:rgba(255,255,255,0.9); color:#1f2a1d;">Learn Our Story</a>
+      </div>
+      <div data-reveal style="border-radius:24px; overflow:hidden; aspect-ratio:4/3; box-shadow:0 24px 60px rgba(0,0,0,0.3);">
+        <img src="https://horizongardensinc.com/wp-content/uploads/2026/04/storefront-entrance-sign.webp" alt="Horizon Gardens storefront entrance" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHY US ===================== -->
+  <section style="padding:100px 24px; max-width:1200px; margin:0 auto;">
+    <div data-reveal style="max-width:640px; margin:0 auto 60px; text-align:center;">
+      <div style="font-size:13px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#85AB8B; margin-bottom:16px;">Why Horizon Gardens</div>
+      <h2 style="font-size:clamp(1.9rem,4vw,3rem); font-weight:400; letter-spacing:-0.03em; color:#1f2a1d; line-height:1.05; margin:0;">Not just a garden center</h2>
+      <p style="margin:18px 0 0; color:#4b5b47; font-size:1.05rem; line-height:1.6;">We&rsquo;re the crew that uses this stuff every day.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr; gap:20px;" class="hg-why-grid">
+      <sc-for list="{{ why }}" as="w" hint-placeholder-count="4">
+        <div data-reveal style="display:flex; gap:20px; align-items:flex-start; background:#fff; border:1px solid rgba(31,42,29,0.07); border-radius:20px; padding:30px 28px;">
+          <div style="flex-shrink:0; width:46px; height:46px; border-radius:12px; background:#eef3ec; display:flex; align-items:center; justify-content:center; color:#336443;">
+            <span style="{{ w.iconHtml }}"></span>
+          </div>
+          <div>
+            <h3 style="margin:0 0 8px; font-size:1.2rem; font-weight:500; color:#1f2a1d; letter-spacing:-0.01em;">{{ w.title }}</h3>
+            <p style="margin:0; color:#4b5b47; font-size:0.96rem; line-height:1.6;">{{ w.body }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section style="background:#eef1e7; padding:100px 24px;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div data-reveal style="max-width:640px; margin:0 auto 60px; text-align:center;">
+        <div style="font-size:13px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#85AB8B; margin-bottom:16px;">Testimonials</div>
+        <h2 style="font-size:clamp(1.9rem,4vw,3rem); font-weight:400; letter-spacing:-0.03em; color:#1f2a1d; line-height:1.05; margin:0;">What our customers say</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr; gap:22px;" class="hg-testi-grid">
+        <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
+          <div data-reveal style="background:#fff; border:1px solid rgba(31,42,29,0.07); border-radius:22px; padding:34px 30px; display:flex; flex-direction:column;">
+            <div style="color:#e0a92b; font-size:16px; letter-spacing:2px; margin-bottom:18px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p style="margin:0 0 24px; color:#2d3a2a; font-size:1.02rem; line-height:1.65; flex:1;">&ldquo;{{ t.quote }}&rdquo;</p>
+            <div>
+              <div style="font-weight:600; color:#1f2a1d; font-size:0.98rem;">{{ t.name }}</div>
+              <div style="color:#85AB8B; font-size:0.88rem; margin-top:2px;">{{ t.city }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== QUALITY + FAQ ===================== -->
+  <section style="padding:100px 24px; max-width:1000px; margin:0 auto;">
+    <div data-reveal style="background:#336443; color:#fff; border-radius:28px; padding:52px 44px; text-align:center; margin-bottom:72px;">
+      <div style="font-size:13px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#c7dcc9; margin-bottom:16px;">Our Quality Promise</div>
+      <h2 style="font-size:clamp(1.6rem,3.5vw,2.4rem); font-weight:400; letter-spacing:-0.02em; line-height:1.2; margin:0 auto; max-width:720px; color:#fff;">If a plant doesn&rsquo;t look right when you get it home, bring it back. We stand behind every product that leaves this yard.</h2>
+    </div>
+
+    <div data-reveal style="text-align:center; margin-bottom:44px;">
+      <h2 style="font-size:clamp(1.9rem,4vw,2.8rem); font-weight:400; letter-spacing:-0.03em; color:#1f2a1d; line-height:1.05; margin:0;">Common questions</h2>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+        <button onClick="{{ f.toggle }}" style="text-align:left; width:100%; background:#fff; border:1px solid rgba(31,42,29,0.08); border-radius:16px; padding:22px 26px; cursor:pointer; transition:box-shadow .2s;" style-hover="box-shadow:0 8px 22px rgba(31,42,29,0.07);">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
+            <span style="font-size:1.05rem; font-weight:500; color:#1f2a1d;">{{ f.q }}</span>
+            <span style="{{ f.iconStyle }}">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#336443" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </div>
+          <div style="{{ f.answerStyle }}">
+            <p style="margin:14px 0 0; color:#4b5b47; font-size:0.98rem; line-height:1.65;">{{ f.a }}</p>
+          </div>
+        </button>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICE AREAS ===================== -->
+  <section style="background:#1f2a1d; color:#fff; padding:90px 24px;">
+    <div style="max-width:1000px; margin:0 auto; text-align:center;">
+      <div data-reveal>
+        <div style="font-size:13px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#85AB8B; margin-bottom:16px;">Serving Palm Beach County</div>
+        <h2 style="font-size:clamp(1.8rem,4vw,2.8rem); font-weight:400; letter-spacing:-0.03em; line-height:1.1; margin:0 auto 20px; max-width:760px; color:#fff;">Our yard is in Loxahatchee Groves &mdash; we deliver across the western communities and beyond</h2>
+        <p style="color:rgba(255,255,255,0.75); font-size:1.02rem; line-height:1.6; max-width:560px; margin:0 auto 40px;">Whether you&rsquo;re off Seminole Pratt Whitney Road or down in Greenacres, we&rsquo;ll get your materials to you within 30 miles.</p>
+      </div>
+      <div data-reveal style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+        <sc-for list="{{ areas }}" as="a" hint-placeholder-count="10">
+          <span style="border:1px solid rgba(255,255,255,0.2); border-radius:999px; padding:10px 20px; font-size:14px; color:rgba(255,255,255,0.9); transition:background .2s;" style-hover="background:rgba(255,255,255,0.1);">{{ a }}</span>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <section id="contact" style="padding:110px 24px; max-width:900px; margin:0 auto; text-align:center;">
+    <div data-reveal>
+      <h2 style="font-size:clamp(2rem,5vw,3.4rem); font-weight:400; letter-spacing:-0.035em; color:#336443; line-height:1.02; margin:0 0 22px;">Ready to see what we&rsquo;ve got?</h2>
+      <p style="color:#4b5b47; font-size:1.1rem; line-height:1.6; max-width:560px; margin:0 auto 20px;">Stop by the yard at 230 D Rd, Loxahatchee Groves, FL 33470 &mdash; or call and we&rsquo;ll get your order ready for pickup or delivery.</p>
+      <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:14px;">
+        <a href="https://maps.google.com/?q=230+D+Rd,+Loxahatchee+Groves,+FL+33470" target="_blank" rel="noopener" style="background:#1f2a1d; color:#fff; font-size:15px; font-weight:500; padding:15px 30px; border-radius:999px; box-shadow:0 6px 18px rgba(31,42,29,0.18); transition:background .15s;" style-hover="background:#2a3827; color:#fff;">Visit the Yard</a>
+        <a href="tel:5615266716" style="display:flex; align-items:center; gap:8px; background:#fff; color:#1f2a1d; font-size:15px; font-weight:500; padding:15px 26px; border-radius:999px; border:1px solid rgba(31,42,29,0.12); transition:background .15s;" style-hover="background:#f4f1e9; color:#1f2a1d;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call (561) 526-6716
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer style="background:#161f14; color:rgba(255,255,255,0.75); padding:64px 24px 32px;">
+    <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr; gap:40px;" class="hg-footer-grid">
+      <div>
+        <div style="font-size:20px; font-weight:600; color:#fff; letter-spacing:-0.02em; margin-bottom:16px;">Horizon Gardens</div>
+        <p style="font-size:14px; line-height:1.6; max-width:320px; margin:0;">Pro-grade landscape plants, flowers, mulch, and bulk materials from a team that uses them on the job every day. Open to homeowners and contractors.</p>
+      </div>
+      <div>
+        <div style="font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#85AB8B; margin-bottom:16px;">Quick Links</div>
+        <div style="display:flex; flex-direction:column; gap:10px; font-size:14px;">
+          <a href="#home" style="color:rgba(255,255,255,0.75);" style-hover="color:#fff;">Home</a>
+          <a href="#about" style="color:rgba(255,255,255,0.75);" style-hover="color:#fff;">About Us</a>
+          <a href="#products" style="color:rgba(255,255,255,0.75);" style-hover="color:#fff;">Products</a>
+          <a href="#contact" style="color:rgba(255,255,255,0.75);" style-hover="color:#fff;">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#85AB8B; margin-bottom:16px;">What We Carry</div>
+        <div style="display:flex; flex-direction:column; gap:10px; font-size:14px;">
+          <span>Landscape Plants</span>
+          <span>Flowers &amp; Annuals</span>
+          <span>Topiaries</span>
+          <span>Mulch &amp; Topsoil</span>
+          <span>Aggregate &amp; Sand</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#85AB8B; margin-bottom:16px;">Contact Us</div>
+        <div style="display:flex; flex-direction:column; gap:10px; font-size:14px;">
+          <a href="tel:5615266716" style="color:rgba(255,255,255,0.75);" style-hover="color:#fff;">(561) 526-6716</a>
+          <a href="https://maps.google.com/?q=230+D+Rd,+Loxahatchee+Groves,+FL+33470" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.75);" style-hover="color:#fff;">230 D Rd, Loxahatchee Groves, FL 33470</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1200px; margin:44px auto 0; padding-top:24px; border-top:1px solid rgba(255,255,255,0.1); font-size:13px; color:rgba(255,255,255,0.5);">&copy; 2026 Horizon Gardens. All rights reserved.</div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:900},&quot;videoSrc&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260511_131941_d136af49-e243-493a-be14-6ff3f24e09e6.mp4&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen: false, openFaq: -1 };
+
+  componentDidMount() {
+    this.injectResponsive();
+    this.startBoomerang();
+    this.setupReveal();
+  }
+
+  injectResponsive() {
+    if (document.getElementById('hg-responsive')) return;
+    const css = `
+      @media (min-width:640px){
+        .hg-nav-phone{ display:flex !important; }
+        .hg-hero-right{ display:flex !important; }
+        .hg-br{ display:block !important; }
+        .hg-stats-grid{ grid-template-columns:repeat(4,1fr) !important; }
+        .hg-products-grid{ grid-template-columns:repeat(2,1fr) !important; }
+        .hg-gallery-grid{ grid-template-columns:repeat(3,1fr) !important; }
+      }
+      @media (min-width:768px){
+        .hg-steps-grid{ grid-template-columns:repeat(3,1fr) !important; }
+        .hg-why-grid{ grid-template-columns:repeat(2,1fr) !important; }
+        .hg-testi-grid{ grid-template-columns:repeat(3,1fr) !important; }
+        .hg-products-grid{ grid-template-columns:repeat(4,1fr) !important; }
+        .hg-about-grid{ grid-template-columns:1.1fr 1fr !important; }
+        .hg-footer-grid{ grid-template-columns:2fr 1fr 1fr 1.2fr !important; }
+      }
+      @media (min-width:1024px){
+        .hg-desktop-nav{ display:flex !important; }
+        .hg-menu-btn{ display:none !important; }
+      }
+    `;
+    const el = document.createElement('style');
+    el.id = 'hg-responsive';
+    el.textContent = css;
+    document.head.appendChild(el);
+  }
+
+  startBoomerang() {
+    const video = document.getElementById('hg-video');
+    const canvas = document.getElementById('hg-canvas');
+    if (!video || !canvas) return;
+    const srcUrl = this.props.videoSrc ?? 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260511_131941_d136af49-e243-493a-be14-6ff3f24e09e6.mp4';
+    if (video.getAttribute('src') !== srcUrl) video.src = srcUrl;
+    const frames = [];
+    let capturing = true;
+    let lastTime = -1;
+    const MAX_WIDTH = 960;
+
+    const captureFrame = () => {
+      if (!capturing || video.readyState < 2) return;
+      if (video.currentTime === lastTime) return;
+      lastTime = video.currentTime;
+      const vw = video.videoWidth, vh = video.videoHeight;
+      if (!vw || !vh) return;
+      const scale = Math.min(1, MAX_WIDTH / vw);
+      const w = Math.round(vw * scale), h = Math.round(vh * scale);
+      const c = document.createElement('canvas');
+      c.width = w; c.height = h;
+      const ctx = c.getContext('2d');
+      if (!ctx) return;
+      ctx.drawImage(video, 0, 0, w, h);
+      frames.push(c);
+    };
+
+    const hasVFC = typeof video.requestVideoFrameCallback === 'function';
+    let rafId = 0;
+    const rafLoop = () => { captureFrame(); if (capturing) rafId = requestAnimationFrame(rafLoop); };
+    const vfcLoop = () => { captureFrame(); if (capturing && video.requestVideoFrameCallback) video.requestVideoFrameCallback(vfcLoop); };
+
+    const playForward = () => {
+      if (frames.length === 0) return;
+      capturing = false;
+      cancelAnimationFrame(rafId);
+      video.style.display = 'none';
+      canvas.style.display = 'block';
+      const first = frames[0];
+      canvas.width = first.width; canvas.height = first.height;
+      const ctx = canvas.getContext('2d');
+      let index = 0, direction = 1, last = performance.now();
+      const interval = 1000 / 30;
+      const render = (now) => {
+        if (now - last >= interval) {
+          last = now;
+          ctx.drawImage(frames[index], 0, 0);
+          index += direction;
+          if (index >= frames.length - 1) { index = frames.length - 1; direction = -1; }
+          else if (index <= 0) { index = 0; direction = 1; }
+        }
+        this._playRaf = requestAnimationFrame(render);
+      };
+      this._playRaf = requestAnimationFrame(render);
+    };
+
+    const onEnded = () => playForward();
+    const onLoaded = () => {
+      video.play().catch(() => {});
+      if (hasVFC) video.requestVideoFrameCallback(vfcLoop);
+      else rafId = requestAnimationFrame(rafLoop);
+    };
+
+    video.addEventListener('loadedmetadata', onLoaded);
+    video.addEventListener('ended', onEnded);
+    if (video.readyState >= 1) onLoaded();
+    // safety: if playback never fires ended (long/looping), begin boomerang after enough frames
+    this._safety = setInterval(() => {
+      if (frames.length > 40 && video.currentTime > 1.5) { clearInterval(this._safety); playForward(); }
+    }, 500);
+  }
+
+  setupReveal() {
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    els.forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(28px)';
+      el.style.transition = 'opacity .7s cubic-bezier(0.22,1,0.36,1), transform .7s cubic-bezier(0.22,1,0.36,1)';
+    });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          const el = e.target;
+          const sibs = Array.from(el.parentElement ? el.parentElement.querySelectorAll(':scope > [data-reveal]') : [el]);
+          const idx = Math.max(0, sibs.indexOf(el));
+          el.style.transitionDelay = (idx * 90) + 'ms';
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+          io.unobserve(el);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    els.forEach((el) => io.observe(el));
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this._playRaf);
+    clearInterval(this._safety);
+  }
+
+  toggleMenu = () => this.setState(s => ({ menuOpen: !s.menuOpen }));
+  closeMenu = () => this.setState({ menuOpen: false });
+  toggleFaq = (i) => this.setState(s => ({ openFaq: s.openFaq === i ? -1 : i }));
+
+  ic(path, opts) {
+    const o = opts || {};
+    const fill = o.fill || 'none';
+    return `display:inline-flex;` + '';
+  }
+
+  renderVals() {
+    const open = this.state.menuOpen;
+    const iconSvg = (inner, fill) => `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="${fill||'none'}" stroke="#336443" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${inner}</svg>`;
+
+    const leaf = '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>';
+    const flower = '<circle cx="12" cy="12" r="3"/><path d="M12 16.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 1 1 4.5 4.5 4.5 4.5 0 1 1-4.5 4.5"/><path d="M12 7.5V9"/><path d="m7.5 12 1.5.5"/><path d="m16.5 12-1.5.5"/>';
+    const sprout = '<path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8Z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2Z"/>';
+    const tree = '<path d="M12 22v-7l-2-2"/><path d="M17 8v.8A6 6 0 0 1 13.8 20v0H10v0A6.5 6.5 0 0 1 7 8h0a5 5 0 0 1 10 0Z"/><path d="m14 14-2 2"/>';
+    const layers = '<path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/>';
+    const mountain = '<path d="m8 3 4 8 5-5 5 15H2L8 3z"/>';
+    const wind = '<path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/>';
+    const shovel = '<path d="M2 22v-5l5-5 5 5-5 5z"/><path d="M9.5 14.5 16 8"/><path d="M17 2v7h-5"/><path d="M22 2v7h-5"/><path d="M17 2h5v5"/>';
+    const truck = '<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>';
+    const award = '<circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>';
+    const users = '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>';
+
+    const products = [
+      { title: 'Landscape Plants', body: 'Hardy, sun-ready plants that thrive in South Florida’s climate. Picked for beauty and staying power.', iconHtml: this.iconWrap(sprout) },
+      { title: 'Flowers', body: 'Seasonal blooms and year-round color to brighten up any yard, garden bed, or planter.', iconHtml: this.iconWrap(flower) },
+      { title: 'Annuals', body: 'Fresh annuals that bring fast, vibrant color to your landscape. Rotated with the seasons.', iconHtml: this.iconWrap(leaf) },
+      { title: 'Topiaries', body: 'Shaped and sculpted topiaries that add instant character to entryways, patios, and gardens.', iconHtml: this.iconWrap(tree) },
+      { title: 'Mulch', body: 'Bulk and bagged mulch in multiple varieties. Keeps beds clean and holds moisture in the heat.', iconHtml: this.iconWrap(layers) },
+      { title: 'Aggregate', body: 'Decorative rock, gravel, and stone for pathways, drainage, and hardscape projects.', iconHtml: this.iconWrap(mountain) },
+      { title: 'Sand', body: 'Clean fill sand and specialty sand for construction, leveling, and landscape use.', iconHtml: this.iconWrap(wind) },
+      { title: 'Topsoil', body: 'Rich, screened topsoil for garden beds, new lawns, and grading projects.', iconHtml: this.iconWrap(shovel) },
+    ];
+
+    const why = [
+      { title: 'Real Landscaper Knowledge', body: 'Our team doesn’t just sell materials — we install them. Ask us anything about what works in your soil, your sun, your project.', iconHtml: this.iconWrap(users) },
+      { title: 'Job-Site Quality', body: 'Every plant, every bag of mulch, every load of topsoil meets the same standard we use on our own landscape jobs.', iconHtml: this.iconWrap(award) },
+      { title: 'Everything In One Place', body: 'Plants, flowers, topiaries, mulch, aggregate, sand, and topsoil — all in one yard, all ready to go.', iconHtml: this.iconWrap(layers) },
+      { title: 'Local Delivery', body: 'Can’t haul it yourself? We deliver bulk materials and plants to homes and job sites within 30 miles of Loxahatchee Groves.', iconHtml: this.iconWrap(truck) },
+    ];
+
+    const faqData = [
+      { q: 'Do I need to be a contractor to shop here?', a: 'Not at all. We’re open to everyone — homeowners, landscapers, contractors, property managers, and anyone else who needs quality landscape materials.' },
+      { q: 'Do you offer delivery?', a: 'Yes. We deliver bulk materials and plants across Palm Beach County, including Wellington, Royal Palm Beach, The Acreage, West Palm Beach, and surrounding areas. Call us for delivery pricing and scheduling.' },
+      { q: 'Can you help me figure out how much mulch or soil I need?', a: 'Absolutely. Tell us your project size and we’ll help you calculate the right amount. No guesswork, no wasted material.' },
+      { q: 'What types of mulch do you carry?', a: 'We stock several varieties including natural wood chips, pine bark, cypress, and colored mulch. Available in bags or bulk by the yard.' },
+      { q: 'Are your plants suited for South Florida?', a: 'Every plant in our yard is selected for the South Florida climate. We know what thrives in our sandy soil, humidity, and sun because we plant these same varieties on our own jobs.' },
+      { q: 'What are your hours?', a: 'Call us at (561) 526-6716 for current hours and availability. We’re located at 230 D Rd in Loxahatchee Groves, FL.' },
+    ];
+    const faqs = faqData.map((f, i) => {
+      const isOpen = this.state.openFaq === i;
+      return {
+        q: f.q, a: f.a,
+        toggle: () => this.toggleFaq(i),
+        iconStyle: `display:inline-flex; flex-shrink:0; transition:transform .3s; transform:rotate(${isOpen ? 45 : 0}deg);`,
+        answerStyle: `overflow:hidden; transition:max-height .35s ease, opacity .3s; max-height:${isOpen ? 300 : 0}px; opacity:${isOpen ? 1 : 0};`,
+      };
+    });
+
+    return {
+      videoSrc: this.props.videoSrc ?? 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260511_131941_d136af49-e243-493a-be14-6ff3f24e09e6.mp4',
+      toggleMenu: this.toggleMenu,
+      closeMenu: this.closeMenu,
+      menuIconStyle: `width:20px; height:20px; position:absolute; transition:all .3s; opacity:${open?0:1}; transform:rotate(${open?90:0}deg) scale(${open?0.5:1});`,
+      closeIconStyle: `width:20px; height:20px; position:absolute; transition:all .3s; opacity:${open?1:0}; transform:rotate(${open?0:-90}deg) scale(${open?1:0.5});`,
+      overlayStyle: `position:fixed; inset:0; z-index:40; background:rgba(31,42,29,0.4); backdrop-filter:blur(3px); transition:opacity .3s; opacity:${open?1:0}; pointer-events:${open?'auto':'none'};`,
+      drawerStyle: `position:fixed; top:0; right:0; bottom:0; z-index:41; width:85%; max-width:380px; background:rgba(255,255,255,0.97); backdrop-filter:blur(20px); box-shadow:-10px 0 40px rgba(0,0,0,0.2); transition:transform .5s cubic-bezier(0.22,1,0.36,1); transform:translateX(${open?'0':'100%'});`,
+      stats: [
+        { value: '20+', label: 'Years in Landscaping' },
+        { value: '8+', label: 'Product Lines' },
+        { value: '30 mi', label: 'Delivery Radius' },
+        { value: '100%', label: 'Quality Backed' },
+      ],
+      steps: [
+        { n: '1', title: 'Visit the Yard', body: 'Stop by our Loxahatchee Groves location off D Road. Walk the rows, see what’s fresh, and pick what catches your eye.' },
+        { n: '2', title: 'Choose Your Materials', body: 'Our team can help you figure out exactly what your project needs, from the right plants to the right amount of mulch.' },
+        { n: '3', title: 'Load Up or We Deliver', body: 'Bring your truck and we’ll load you up. Or schedule a delivery anywhere within 30 miles of Loxahatchee Groves.' },
+      ],
+      products,
+      why,
+      faqs,
+      gallery: [
+        { src: 'https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-red.webp', alt: 'Red mulch' },
+        { src: 'https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-pine-bark-chunks.webp', alt: 'Pine bark chunks' },
+        { src: 'https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-natural-wood-chips.webp', alt: 'Natural wood chips' },
+        { src: 'https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-dark-brown.webp', alt: 'Dark brown mulch' },
+        { src: 'https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-cypress.webp', alt: 'Cypress mulch' },
+        { src: 'https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-brown-bark-02.webp', alt: 'Brown bark mulch' },
+      ],
+      testimonials: [
+        { quote: 'We’ve been buying our mulch and topsoil here since they opened. The quality is way better than what we were getting from the big stores, and the guys actually help you load up.', name: 'Mike R.', city: 'Wellington, FL' },
+        { quote: 'I came in looking for some annuals for my front garden and ended up getting great advice on what would actually survive our summer heat. Love this place.', name: 'Sandra T.', city: 'Royal Palm Beach, FL' },
+        { quote: 'As a landscaper, I need a supplier I can count on. Horizon Gardens has everything I need in one stop, and the materials are always fresh and ready.', name: 'Carlos M.', city: 'West Palm Beach, FL' },
+      ],
+      areas: ['Loxahatchee Groves','Wellington','Royal Palm Beach','The Acreage','West Palm Beach','Palm Beach Gardens','Greenacres','Boynton Beach','Lake Worth','Lake Clarke Shores'],
+    };
+  }
+
+  iconWrap(inner) {
+    return `display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; background-image:url("data:image/svg+xml,${encodeURIComponent('<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#336443\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">'+inner+'</svg>')}"); background-size:22px 22px; background-repeat:no-repeat; background-position:center;`;
+  }
+}
+</script>
+</body>
+</html>

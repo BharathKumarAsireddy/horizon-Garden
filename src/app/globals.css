@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --hg-bg: #f4f1e9;
+  --hg-dark: #1f2a1d;
+  --hg-dark2: #161f14;
+  --hg-green: #336443;
+  --hg-green-light: #85ab8b;
+  --hg-text: #4b5b47;
+  --hg-text2: #2d3a2a;
+  --hg-panel: #eef1e7;
+  --hg-icon-bg: #eef3ec;
+  --hg-gold: #e0a92b;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: var(--hg-dark);
+  background: var(--hg-bg);
+}
+
+a {
+  color: var(--hg-green);
+}
+
+::selection {
+  background: var(--hg-green-light);
+  color: var(--hg-dark);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
 }
