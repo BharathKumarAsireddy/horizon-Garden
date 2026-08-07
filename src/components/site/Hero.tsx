@@ -155,7 +155,7 @@ export default function Hero() {
             href="#contact"
             className="rounded-full bg-[#1f2a1d] px-7 py-3.5 text-[15px] font-medium text-white shadow-[0_6px_18px_rgba(31,42,29,0.18)] transition-colors hover:bg-[#2a3827]"
           >
-            Visit the Yard
+            Visit the Garden
           </a>
           <a
             href={`tel:${PHONE_TEL}`}

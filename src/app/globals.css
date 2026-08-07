@@ -30,8 +30,12 @@ body {
   background: var(--hg-bg);
 }
 
-a {
-  color: var(--hg-green);
+/* Layered (not global) so Tailwind text-color utilities on <a>/<Link>
+   elements — e.g. text-white on a dark button — can still win the cascade. */
+@layer base {
+  a {
+    color: var(--hg-green);
+  }
 }
 
 ::selection {

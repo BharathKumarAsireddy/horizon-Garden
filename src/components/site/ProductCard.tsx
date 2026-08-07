@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ICONS } from "./icons";
 import type { products } from "@/lib/site-data";
 
@@ -7,8 +8,10 @@ export default function ProductCard({
   product: (typeof products)[number];
 }) {
   const Icon = ICONS[product.icon];
-  return (
-    <div className="group h-full overflow-hidden rounded-2xl border border-[#1f2a1d]/7 bg-white transition-all duration-250 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(31,42,29,0.1)]">
+  const slug = "slug" in product ? product.slug : undefined;
+
+  const body = (
+    <>
       <div className="relative aspect-4/3 overflow-hidden bg-[#dfe4d6]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -29,6 +32,19 @@ export default function ProductCard({
           {product.body}
         </p>
       </div>
-    </div>
+    </>
   );
+
+  const className =
+    "group block h-full overflow-hidden rounded-2xl border border-[#1f2a1d]/7 bg-white transition-all duration-250 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(31,42,29,0.1)]";
+
+  if (slug) {
+    return (
+      <Link href={`/products/${slug}`} className={className}>
+        {body}
+      </Link>
+    );
+  }
+
+  return <div className={className}>{body}</div>;
 }

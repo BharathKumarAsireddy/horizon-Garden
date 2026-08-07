@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "./Reveal";
 import { mulchVarieties } from "@/lib/site-data";
 
@@ -35,6 +36,14 @@ export default function MulchVarieties() {
             </Reveal>
           ))}
         </div>
+        <Reveal className="mt-10 text-center">
+          <Link
+            href="/products/mulch"
+            className="inline-block rounded-full bg-[#1f2a1d] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#2a3827]"
+          >
+            View All Mulch Types
+          </Link>
+        </Reveal>
       </div>
     </section>
   );

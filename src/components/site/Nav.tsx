@@ -81,15 +81,9 @@ export default function Nav() {
                 </Link>
               );
             })}
-            <Link
-              href="/#contact"
-              className="ml-2 rounded-full bg-[#1f2a1d] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2a3827]"
-            >
-              Visit the Yard
-            </Link>
           </div>
 
-          <div className="flex items-center gap-4 text-[#2d3a2a]">
+          <div className="flex items-center gap-3 text-[#2d3a2a] sm:gap-4">
             <a
               href={`tel:${PHONE_TEL}`}
               className="hidden sm:flex items-center gap-2 text-sm font-medium text-[#2d3a2a] transition-opacity hover:opacity-80"
@@ -97,6 +91,12 @@ export default function Nav() {
               <Phone size={16} />
               {PHONE_DISPLAY}
             </a>
+            <Link
+              href="/#contact"
+              className="rounded-full bg-[#1f2a1d] px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2a3827] sm:px-5"
+            >
+              Visit the Garden
+            </Link>
             <button
               onClick={() => setOpen((v) => !v)}
               aria-label="Toggle menu"
@@ -170,13 +170,6 @@ export default function Nav() {
               <Phone size={16} />
               {PHONE_DISPLAY}
             </a>
-            <Link
-              href="/#contact"
-              onClick={close}
-              className="mt-1.5 rounded-full bg-[#1f2a1d] px-5 py-3.5 text-center text-[15px] font-semibold text-white"
-            >
-              Visit the Yard
-            </Link>
           </div>
         </div>
       </div>
