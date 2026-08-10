@@ -15,13 +15,13 @@ export default function Hero() {
 
       {/* HERO COPY */}
       <div className="relative z-10 flex flex-1 flex-col items-center px-6 pt-32 text-center">
-        <h1 className="m-0 max-w-[1000px] text-[clamp(2.1rem,6vw,5.25rem)] leading-[0.98] font-normal tracking-[-0.035em] text-[#336443] text-balance [text-shadow:0_2px_28px_rgba(244,241,233,0.9),0_1px_4px_rgba(244,241,233,0.9)]">
+        <h1 className="m-0 max-w-[1000px] text-[clamp(2.1rem,6vw,5.25rem)] leading-[0.98] font-normal tracking-[-0.035em] text-[#1f3a26] text-balance [text-shadow:0_2px_6px_rgba(244,241,233,0.55)]">
           Your South Florida{" "}
-          <span className="text-[#85ab8b]">
+          <span className="text-[#3d6b48]">
             landscape<br className="hidden sm:block" /> supply yard
           </span>
         </h1>
-        <p className="mx-auto mt-6 max-w-[520px] text-[clamp(0.95rem,1.6vw,1.15rem)] leading-relaxed text-[#4b5b47] [text-shadow:0_1px_16px_rgba(244,241,233,0.85)]">
+        <p className="mx-auto mt-6 max-w-[520px] text-[clamp(0.95rem,1.6vw,1.15rem)] leading-relaxed text-[#33422f] [text-shadow:0_1px_6px_rgba(244,241,233,0.6)]">
           Pro-grade plants, flowers, mulch, and bulk materials from a team
           that uses them on the job every day. Open to everyone.
         </p>
