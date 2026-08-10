@@ -270,11 +270,13 @@ export const soilTypes = [
     name: "Black Cow",
     note: "Composted manure, rich in organic matter and nutrients.",
     color: "#2a1f16",
+    image: "/materials/black-cow.jpg",
   },
   {
     name: "Mushroom Compost",
     note: "Organic soil made from spent mushroom-farm substrate.",
     color: "#4a3a28",
+    image: "/materials/mushroom-compost.jpeg",
   },
   {
     name: "Vegetable Mix",
@@ -285,11 +287,13 @@ export const soilTypes = [
     name: "Potting Soil",
     note: "Peat, pine bark, coarse sand, sawdust, and airlite.",
     color: "#5c4530",
+    image: "/materials/potting-soil.jpg",
   },
   {
     name: "Peat Moss",
     note: "Conditions soil — light texture that holds moisture.",
     color: "#4a3223",
+    image: "/materials/peat-moss.jpg",
   },
   {
     name: "Propagation Mix",
@@ -297,7 +301,11 @@ export const soilTypes = [
     color: "#6b5847",
   },
   { name: "Atlasgro", color: "#3d2a1a" },
-  { name: "Overburden", color: "#8a7050" },
+  {
+    name: "Overburden",
+    color: "#8a7050",
+    image: "/materials/overburden-soil.jpg",
+  },
 ] as const;
 
 export const sandTypes = [
@@ -311,6 +319,7 @@ export const sandTypes = [
     name: "Red Clay",
     note: "Weathered, mineral-rich soil with a natural reddish hue.",
     color: "#a24a2c",
+    image: "/materials/red-clay.jpg",
   },
   {
     name: "Crushed Coquina",
@@ -321,6 +330,19 @@ export const sandTypes = [
     name: "Green Sand",
     note: "Conditions heavy soils and enhances sandy soils.",
     color: "#7c8a6e",
+    image: "/materials/green-sand.jpg",
+  },
+  {
+    name: "Concrete Sand",
+    note: "Fine, compactable sand for concrete mix and paver base.",
+    color: "#8a8378",
+    image: "/materials/concrete-sand.jpg",
+  },
+  {
+    name: "Crushed Sand",
+    note: "Crushed and screened sand for fill and construction use.",
+    color: "#c9a876",
+    image: "/materials/crushed-sand.jpg",
   },
   {
     name: "Concrete Screening",
@@ -331,14 +353,16 @@ export const sandTypes = [
     name: "Recycled Concrete",
     note: "Crushed, reprocessed concrete for new construction.",
     color: "#8d8d85",
+    image: "/materials/recycled-concrete.jpg",
   },
   {
     name: "Recycled Asphalt",
     note: "Reclaimed pavement, reused for roads and repairs.",
     color: "#3a3a3a",
+    image: "/materials/recycled-asphalt.jpg",
   },
-  { name: "Clean Fill", color: "#d9c9a3" },
-  { name: "DOT Sand", color: "#cbb98e" },
+  { name: "Clean Fill", color: "#d9c9a3", image: "/materials/clean-fill.jpg" },
+  { name: "DOT Sand", color: "#cbb98e", image: "/materials/dot-sand.jpg" },
 ] as const;
 
 // Type list sourced from thebushelstops.com/rocks-&-glasses, per site owner —
@@ -350,14 +374,34 @@ export const rockAggregateTypes = [
     image:
       "https://horizongardensinc.com/wp-content/uploads/2026/04/stone-river-pebbles-tan-01.webp",
   },
-  { name: "Amberlite", color: "#c98a3f" },
-  { name: "Black Slate", color: "#2b2b2c" },
-  { name: "Black Sparkle", color: "#1e1e1f" },
-  { name: "Black Lava Rock", color: "#1c1a19" },
+  { name: "Amberlite", color: "#c98a3f", image: "/materials/amberlite.jpg" },
+  {
+    name: "Black Slate",
+    color: "#2b2b2c",
+    image: "/materials/black-slate.jpeg",
+  },
+  {
+    name: "Black Sparkle",
+    color: "#1e1e1f",
+    image: "/materials/black-sparkle.jpg",
+  },
+  {
+    name: "Black Lava Rock",
+    color: "#1c1a19",
+    image: "/materials/black-lava-rock.jpg",
+  },
   { name: "Black Lava Mite-T-Lite", color: "#3a3632" },
-  { name: "Brown Chattahoochee", color: "#8a6a4a" },
-  { name: "Brown River Rock", color: "#7a5c3e" },
-  { name: "Granite", color: "#8f8f8c" },
+  {
+    name: "Brown Chattahoochee",
+    color: "#8a6a4a",
+    image: "/materials/brown-chattahoochee.jpg",
+  },
+  {
+    name: "Brown River Rock",
+    color: "#7a5c3e",
+    image: "/materials/brown-river-rock.webp",
+  },
+  { name: "Granite", color: "#8f8f8c", image: "/materials/granite.webp" },
   { name: 'Granite 3/8"', color: "#9a9a97" },
   { name: "Limestone Drainfield", color: "#c9c2b0" },
   { name: "Limestone Pea Rock", color: "#d8d0bd" },
@@ -404,7 +448,11 @@ export const rockBoulderTypes = [
   { name: "Antique Flagstone (Gray)", color: "#8a8a85" },
   { name: "Antique Flagstone (White)", color: "#d9d5c8" },
   { name: "Apache Paint", color: "#a3623f" },
-  { name: "Black Slate", color: "#2b2b2c" },
+  {
+    name: "Black Slate",
+    color: "#2b2b2c",
+    image: "/materials/black-slate.jpeg",
+  },
   { name: "Blue Frost", color: "#6f8a9c" },
   { name: "Blue Tumble Flagstone", color: "#5f7a8c" },
   { name: "Brown & Silver Flagstone", color: "#8a7560" },
@@ -558,5 +606,3 @@ export const PHONE_TEL = "5615266716";
 export const ADDRESS = "230 D Rd, Loxahatchee Groves, FL 33470";
 export const MAPS_URL =
   "https://maps.google.com/?q=230+D+Rd,+Loxahatchee+Groves,+FL+33470";
-export const HERO_VIDEO_URL =
-  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260511_131941_d136af49-e243-493a-be14-6ff3f24e09e6.mp4";
