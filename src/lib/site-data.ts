@@ -30,8 +30,7 @@ export const products = [
     icon: "sprout",
     category: "Plants & Flowers",
     slug: "landscape-plants",
-    image:
-      "https://horizongardensinc.com/wp-content/uploads/2026/04/plant-yucca.webp",
+    image: "/products/landscape-plant.jpg",
   },
   {
     title: "Flowers",
@@ -39,8 +38,7 @@ export const products = [
     icon: "flower",
     category: "Plants & Flowers",
     slug: "flowers",
-    image:
-      "https://horizongardensinc.com/wp-content/uploads/2026/04/plant-mandevilla-yellow.webp",
+    image: "/products/flower-in-hero.jpg",
   },
   {
     title: "Annuals",
@@ -103,15 +101,13 @@ export const plantPhotos = [
     slug: "landscape-plants",
     title: "Landscape Plants",
     alt: "Yucca landscape plant",
-    image:
-      "https://horizongardensinc.com/wp-content/uploads/2026/04/plant-yucca.webp",
+    image: "/products/landscape-plant.jpg",
   },
   {
     slug: "flowers",
     title: "Flowers",
     alt: "Yellow mandevilla flowers",
-    image:
-      "https://horizongardensinc.com/wp-content/uploads/2026/04/plant-mandevilla-yellow.webp",
+    image: "/products/flower-in-hero.jpg",
   },
   {
     slug: "annuals",

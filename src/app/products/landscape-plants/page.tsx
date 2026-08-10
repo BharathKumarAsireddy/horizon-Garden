@@ -44,7 +44,7 @@ export default function LandscapePlantsPage() {
           "Every plant in our yard is chosen for one reason: it holds up here. Palm Beach County's heat, humidity, and sandy soil aren't kind to plants that weren't bred for it — so we don't stock what won't last.",
           "Our own crews plant these same varieties on landscaping jobs across the county every week, which means we already know how they perform in full sun, part shade, wet season, and dry season alike.",
         ]}
-        image="https://horizongardensinc.com/wp-content/uploads/2026/04/plant-yucca.webp"
+        image="/products/landscape-plant.jpg"
         imageAlt="Yucca landscape plant in the Horizon Gardens yard"
         highlights={[
           "Bred for heat, humidity & sandy soil",

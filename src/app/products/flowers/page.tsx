@@ -44,7 +44,7 @@ export default function FlowersPage() {
           "Flowers do a lot of work for a small footprint — a few beds of seasonal color can change the whole feel of a yard. We rotate our stock so there's always something in bloom.",
           "From mandevilla vines for trellises and mailboxes to bedding flowers for borders and planters, we carry what actually performs in Florida sun.",
         ]}
-        image="https://horizongardensinc.com/wp-content/uploads/2026/04/plant-mandevilla-yellow.webp"
+        image="/products/flower-in-hero.jpg"
         imageAlt="Yellow mandevilla flowers"
         highlights={[
           "Rotated with the growing season",
