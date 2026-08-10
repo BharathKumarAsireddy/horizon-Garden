@@ -21,7 +21,7 @@ export default function Hero() {
             landscape<br className="hidden sm:block" /> supply yard
           </span>
         </h1>
-        <p className="mx-auto mt-6 max-w-[520px] text-[clamp(0.95rem,1.6vw,1.15rem)] leading-relaxed text-[#33422f] [text-shadow:0_1px_6px_rgba(244,241,233,0.6)]">
+        <p className="mx-auto mt-6 max-w-[520px] text-[clamp(0.95rem,1.6vw,1.15rem)] leading-relaxed font-medium text-[#16210f] [text-shadow:0_1px_2px_rgba(244,241,233,0.9),0_2px_14px_rgba(244,241,233,0.85)]">
           Pro-grade plants, flowers, mulch, and bulk materials from a team
           that uses them on the job every day. Open to everyone.
         </p>

@@ -86,7 +86,7 @@ export default function Nav() {
           <div className="flex items-center gap-3 text-[#2d3a2a] sm:gap-4">
             <a
               href={`tel:${PHONE_TEL}`}
-              className="hidden sm:flex items-center gap-2 text-sm font-medium text-[#2d3a2a] transition-opacity hover:opacity-80"
+              className="hidden sm:flex items-center gap-2 text-sm font-semibold text-[#12190f] [text-shadow:0_1px_3px_rgba(244,241,233,0.85)] transition-opacity hover:opacity-80"
             >
               <Phone size={16} />
               {PHONE_DISPLAY}

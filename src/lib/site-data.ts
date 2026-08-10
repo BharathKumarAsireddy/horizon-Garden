@@ -228,29 +228,17 @@ export const woodMulchTypes = [
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Wood_chip_pile.jpg/1280px-Wood_chip_pile.jpg",
   },
-  { name: "Grade A Cypress", color: "#b89568" },
-  { name: "Pine Fines", color: "#8a6b47" },
-  { name: "Pine Straw", color: "#c9a227" },
   {
     name: "Recycled Mulch",
     color: "#6e5a44",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Surfaces_woody_mulch_broken_sticks_on_the_ground.JPG/1280px-Surfaces_woody_mulch_broken_sticks_on_the_ground.JPG",
   },
-  { name: "Spanish Gold Mulch", color: "#d1a13c" },
 ] as const;
 
 // Real photography above sourced from Wikimedia Commons (CC0 / CC BY-SA — free for
 // commercial use). Verified per-image against the actual product before use; niche
 // trade names with no confident real-world match are left as color swatches.
-
-export const rubberMulchTypes = [
-  { name: "Black Rubber Mulch", color: "#1c1c1c" },
-  { name: "Blue Rubber Mulch", color: "#2b5c8a" },
-  { name: "Brown Rubber Mulch", color: "#5b3a24" },
-  { name: "Green Rubber Mulch", color: "#2f6b3a" },
-  { name: "Red Rubber Mulch", color: "#8a2a22" },
-] as const;
 
 // Type list and descriptions sourced from thebushelstops.com/soils-&-sands, per site
 // owner. Real Horizon Gardens photography is used wherever we have a matching product;
@@ -275,11 +263,6 @@ export const soilTypes = [
     image: "/materials/mushroom-compost.jpeg",
   },
   {
-    name: "Vegetable Mix",
-    note: "A blend of compost, pine bark, coarse sand, and peat.",
-    color: "#3f2c1c",
-  },
-  {
     name: "Potting Soil",
     note: "Peat, pine bark, coarse sand, sawdust, and airlite.",
     color: "#5c4530",
@@ -291,12 +274,6 @@ export const soilTypes = [
     color: "#4a3223",
     image: "/materials/peat-moss.jpg",
   },
-  {
-    name: "Propagation Mix",
-    note: "Canadian peat and perlite for starting cuttings.",
-    color: "#6b5847",
-  },
-  { name: "Atlasgro", color: "#3d2a1a" },
   {
     name: "Overburden",
     color: "#8a7050",
@@ -318,11 +295,6 @@ export const sandTypes = [
     image: "/materials/red-clay.jpg",
   },
   {
-    name: "Crushed Coquina",
-    note: "Crushed shell for pathways and decorative landscaping.",
-    color: "#e8ddc7",
-  },
-  {
     name: "Green Sand",
     note: "Conditions heavy soils and enhances sandy soils.",
     color: "#7c8a6e",
@@ -339,11 +311,6 @@ export const sandTypes = [
     note: "Crushed and screened sand for fill and construction use.",
     color: "#c9a876",
     image: "/materials/crushed-sand.jpg",
-  },
-  {
-    name: "Concrete Screening",
-    note: "A compactable base layer for pavers and stepping stones.",
-    color: "#9a9690",
   },
   {
     name: "Recycled Concrete",
@@ -386,7 +353,6 @@ export const rockAggregateTypes = [
     color: "#1c1a19",
     image: "/materials/black-lava-rock.jpg",
   },
-  { name: "Black Lava Mite-T-Lite", color: "#3a3632" },
   {
     name: "Brown Chattahoochee",
     color: "#8a6a4a",
@@ -398,92 +364,14 @@ export const rockAggregateTypes = [
     image: "/materials/brown-river-rock.webp",
   },
   { name: "Granite", color: "#8f8f8c", image: "/materials/granite.webp" },
-  { name: 'Granite 3/8"', color: "#9a9a97" },
-  { name: "Limestone Drainfield", color: "#c9c2b0" },
-  { name: "Limestone Pea Rock", color: "#d8d0bd" },
-  { name: "Marble Chip", color: "#e8e4da" },
-  { name: "New England River Jack", color: "#8a8378" },
-  { name: "Palmetto Green", color: "#6e7a5e" },
-  { name: 'Peachy River Rock 3/4"', color: "#d9a688" },
-  { name: "Pink Flamingo", color: "#e08a9c" },
-  { name: "Pink Rose", color: "#d98fa0" },
-  { name: "Red Rock Crimson/Cedar Bark", color: "#7a3327" },
-  { name: "Red Lava Rock", color: "#5c2a1f" },
-  { name: "Red Lava Mite-T-Lite", color: "#7a4030" },
-  { name: "Salt & Pepper", color: "#7d7d7d" },
-  { name: "Seminole Chip", color: "#c7b393" },
-  { name: "Staylite Pumice", color: "#b8b3a8" },
-  { name: '3/8" Warning Track', color: "#9c5a3c" },
-  { name: "Washed Shell", color: "#ece4d3" },
-  { name: "White River Rock", color: "#e6e2d6" },
-  { name: 'White River Rock 1/2"', color: "#eae6db" },
-] as const;
-
-export const decorativeStoneTypes = [
-  { name: "3 Color Mix", color: "#a89a82" },
-  { name: "Black Button", color: "#1f1f20" },
-  { name: "Coffee Bean", color: "#4a3325" },
-  { name: "Jade Pebble", color: "#4f7a5e" },
-  { name: "Lava Pebble", color: "#3a2620" },
-  { name: "Mexican Beach Pebble", color: "#8a8a86" },
-  { name: "Mixed Pebble", color: "#9a8f7c" },
-  { name: "Polished Beach Pebble", color: "#b3ac9c" },
-  { name: "Salmon Pebble", color: "#d99a80" },
-  { name: "Santorini Pebble", color: "#d8d5cc" },
-  { name: "Top Class (Black)", color: "#1c1c1d" },
-  { name: "Top Class (Red)", color: "#7a2e26" },
-  { name: "Top Class (Tiger)", color: "#a37c4a" },
-  { name: "Top Class (White)", color: "#e8e6df" },
-  { name: "Tumble Jade", color: "#5c8268" },
-  { name: "Wood Grain", color: "#9c7f5a" },
 ] as const;
 
 export const rockBoulderTypes = [
-  { name: "Amberwood", color: "#a3754a" },
-  { name: "Antique Flagstone (Black)", color: "#3a3a3a" },
-  { name: "Antique Flagstone (Gray)", color: "#8a8a85" },
-  { name: "Antique Flagstone (White)", color: "#d9d5c8" },
-  { name: "Apache Paint", color: "#a3623f" },
   {
     name: "Black Slate",
     color: "#2b2b2c",
     image: "/materials/black-slate.jpeg",
   },
-  { name: "Blue Frost", color: "#6f8a9c" },
-  { name: "Blue Tumble Flagstone", color: "#5f7a8c" },
-  { name: "Brown & Silver Flagstone", color: "#8a7560" },
-  { name: "Calcide Crystal", color: "#e3e0d6" },
-  { name: "Canyon River Flats", color: "#b3805a" },
-  { name: "Cap Rocks", color: "#a89a82" },
-  { name: "Cap Rocks (Fake)", color: "#9c9c96" },
-  { name: "Deco Skippers", color: "#9a9590" },
-  { name: "Dragon Aquarium", color: "#4a5c52" },
-  { name: "Emerald Gray", color: "#5c7268" },
-  { name: "Fern Green", color: "#4f6b4a" },
-  { name: "Florida Sunrise", color: "#d98a5c" },
-  { name: "Glacier Green", color: "#7a9c85" },
-  { name: "Honeycut-Creek", color: "#a3835c" },
-  { name: "Irregular Rustic Tumble", color: "#8a7a68" },
-  { name: "Maple Creek Flats", color: "#9c7248" },
-  { name: "Midnight Black", color: "#171717" },
-  { name: "Mixed Pebble", color: "#9a8f7c" },
-  { name: "PA Bluestone", color: "#5f6f7a" },
-  { name: "Rainbow Sunshine", color: "#d1963f" },
-  { name: "Rainbow Sunshine Pebble", color: "#d9a856" },
-  { name: "Rip-Rap", color: "#7a7a75" },
-  { name: "Riverjack Boulder", color: "#a3906f" },
-  { name: "River Slicks Flatstone", color: "#a89880" },
-  { name: "Ruby Spar", color: "#8a2f30" },
-  { name: "Santorini Boulder", color: "#d3cfc4" },
-  { name: "Santorini Tiles", color: "#d8d4c9" },
-  { name: "Spaghetti Rock", color: "#9c7f5c" },
-  { name: "Spaghetti Rock (Green)", color: "#6e8060" },
-  { name: "Tennessee Fieldstone", color: "#8a7a68" },
-  { name: "Tennessee Sandstone Gray", color: "#918d84" },
-  { name: "Tennessee Strip", color: "#a3835f" },
-  { name: "Tennessee River Round", color: "#9c8262" },
-  { name: "Tomahawk Warrior Flagstone", color: "#8a4a35" },
-  { name: "White-Cream Limestone", color: "#e6e1d2" },
 ] as const;
 
 export const why = [
@@ -532,7 +420,7 @@ export const faqs = [
   },
   {
     q: "What are your hours?",
-    a: "Call us at (561) 526-6716 for current hours and availability. We're located at 230 D Rd in Loxahatchee Groves, FL.",
+    a: "We're open Monday–Saturday 7:30 AM–4:00 PM and Sunday 9:00 AM–3:00 PM at 230 D Rd in Loxahatchee Groves, FL.",
   },
 ];
 
@@ -597,8 +485,15 @@ export const areas = [
   "Lake Clarke Shores",
 ];
 
-export const PHONE_DISPLAY = "(561) 526-6716";
-export const PHONE_TEL = "5615266716";
+export const PHONE_DISPLAY = "(561) 818-7800";
+export const PHONE_TEL = "5618187800";
 export const ADDRESS = "230 D Rd, Loxahatchee Groves, FL 33470";
 export const MAPS_URL =
   "https://maps.google.com/?q=230+D+Rd,+Loxahatchee+Groves,+FL+33470";
+export const MAPS_EMBED_URL =
+  "https://maps.google.com/maps?q=230+D+Rd,+Loxahatchee+Groves,+FL+33470&z=15&output=embed";
+
+export const HOURS = [
+  { days: "Monday – Saturday", time: "7:30 AM – 4:00 PM" },
+  { days: "Sunday", time: "9:00 AM – 3:00 PM" },
+];

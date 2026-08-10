@@ -7,6 +7,7 @@ import ProductsTeaser from "@/components/site/ProductsTeaser";
 import TestimonialsMarquee from "@/components/site/TestimonialsMarquee";
 import Faq from "@/components/site/Faq";
 import ContactSection from "@/components/site/ContactSection";
+import VisitUs from "@/components/site/VisitUs";
 import Footer from "@/components/site/Footer";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       <ProductsTeaser />
       <TestimonialsMarquee />
       <Faq />
+      <VisitUs />
       <ContactSection />
       <Footer />
     </div>

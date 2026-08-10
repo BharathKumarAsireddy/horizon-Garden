@@ -7,12 +7,12 @@ import Reveal from "@/components/site/Reveal";
 import TypeCard from "@/components/site/TypeCard";
 import FinalCta from "@/components/site/FinalCta";
 import Footer from "@/components/site/Footer";
-import { woodMulchTypes, rubberMulchTypes } from "@/lib/site-data";
+import { woodMulchTypes } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Mulch | Horizon Gardens",
   description:
-    "Wood mulch and rubber mulch, in every color and finish we carry at our Loxahatchee Groves yard.",
+    "Wood mulch in every color and finish we carry at our Loxahatchee Groves yard.",
 };
 
 export default function MulchPage() {
@@ -21,8 +21,8 @@ export default function MulchPage() {
       <Nav />
       <PageBanner
         eyebrow="Mulch"
-        title="Wood Mulch & Rubber Mulch"
-        description="Every color and finish we carry — from natural wood blends for beds and pathways to long-lasting rubber mulch for playgrounds and low-maintenance landscaping."
+        title="Wood Mulch"
+        description="Every color and finish we carry — natural wood blends for beds, pathways, and every landscaping project."
       />
 
       <section className="mx-auto max-w-[1200px] px-6 py-20">
@@ -52,28 +52,6 @@ export default function MulchPage() {
               <TypeCard type={t} />
             </Reveal>
           ))}
-        </div>
-      </section>
-
-      <section className="bg-[#eef1e7] px-6 py-20">
-        <div className="mx-auto max-w-[1200px]">
-          <Reveal className="mx-auto mb-10 max-w-[720px]">
-            <h2 className="m-0 text-[clamp(1.7rem,3.5vw,2.4rem)] leading-[1.1] font-normal tracking-[-0.02em] text-[#1f2a1d]">
-              Rubber Mulch
-            </h2>
-            <p className="mt-3 text-[1rem] leading-relaxed text-[#4b5b47]">
-              Long-lasting, low-maintenance coverage that won&rsquo;t fade,
-              float, or need replacing every season — a popular choice for
-              playgrounds, walkways, and high-traffic beds.
-            </p>
-          </Reveal>
-          <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-5">
-            {rubberMulchTypes.map((t, i) => (
-              <Reveal key={t.name} delay={(i % 5) * 80}>
-                <TypeCard type={t} />
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 
