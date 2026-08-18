@@ -8,6 +8,9 @@ export default function ContactSection() {
     <section id="contact" className="scroll-mt-24 px-6 py-25">
       <div className="mx-auto grid max-w-[1100px] grid-cols-1 gap-14 md:grid-cols-2 md:items-center">
         <Reveal>
+          <div className="mb-4 text-[13px] font-semibold tracking-[0.14em] text-[#85ab8b] uppercase">
+            Get In Touch
+          </div>
           <h2 className="m-0 mb-5.5 text-[clamp(2rem,5vw,3.2rem)] leading-[1.02] font-normal tracking-[-0.035em] text-[#336443]">
             Ready to see what we&rsquo;ve got?
           </h2>
@@ -20,7 +23,7 @@ export default function ContactSection() {
               href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-[#1f2a1d] px-7.5 py-4 text-[15px] font-medium text-white shadow-[0_6px_18px_rgba(31,42,29,0.18)] transition-colors hover:bg-[#2a3827]"
+              className="rounded-full bg-[#e8895a] px-7.5 py-4 text-[15px] font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#c96a3a]"
             >
               Visit the Yard
             </a>

@@ -23,7 +23,7 @@ export default function VisitUs() {
               tabIndex={-1}
             />
             <div className="absolute inset-0 flex items-end justify-start bg-[linear-gradient(0deg,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0)_45%)] p-5 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#1f2a1d] shadow-[0_4px_12px_rgba(0,0,0,0.18)]">
+              <span className="inline-flex items-center gap-2 rounded-full bg-[#e8895a] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_12px_rgba(0,0,0,0.25)]">
                 <Navigation size={15} />
                 Get Directions
               </span>

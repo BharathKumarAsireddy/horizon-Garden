@@ -21,7 +21,7 @@ export default function AboutTeaser() {
         </p>
         <Link
           href="/about"
-          className="inline-block rounded-full bg-white px-6.5 py-3.5 text-sm font-semibold text-[#1f2a1d] transition-colors hover:bg-white/90"
+          className="inline-block rounded-full bg-[#e8895a] px-6.5 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#c96a3a]"
         >
           Learn Our Story
         </Link>

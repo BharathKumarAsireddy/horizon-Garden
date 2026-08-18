@@ -98,7 +98,7 @@ export default function Nav() {
             </a>
             <Link
               href="/#contact"
-              className="rounded-full bg-[#1f2a1d] px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2a3827] sm:px-5"
+              className="rounded-full bg-[#e8895a] px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#c96a3a] sm:px-5"
             >
               Visit the Garden
             </Link>

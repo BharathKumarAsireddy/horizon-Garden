@@ -39,7 +39,7 @@ export default function MulchVarieties() {
         <Reveal className="mt-10 text-center">
           <Link
             href="/products/mulch"
-            className="inline-block rounded-full bg-[#1f2a1d] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#2a3827]"
+            className="inline-block rounded-full bg-[#e8895a] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#c96a3a]"
           >
             View All Mulch Types
           </Link>

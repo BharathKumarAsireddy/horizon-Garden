@@ -112,7 +112,7 @@ export default function ContactForm() {
         </div>
         <button
           type="submit"
-          className="mt-1.5 w-full rounded-full bg-[#1f2a1d] px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-[#2a3827]"
+          className="mt-1.5 w-full rounded-full bg-[#e8895a] px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-[#c96a3a]"
         >
           Send Inquiry
         </button>

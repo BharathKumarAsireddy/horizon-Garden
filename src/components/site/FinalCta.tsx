@@ -21,7 +21,7 @@ export default function FinalCta() {
             href={MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-[#1f2a1d] px-7.5 py-4 text-[15px] font-medium text-white shadow-[0_6px_18px_rgba(31,42,29,0.18)] transition-colors hover:bg-[#2a3827]"
+            className="rounded-full bg-[#e8895a] px-7.5 py-4 text-[15px] font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#c96a3a]"
           >
             Visit the Yard
           </a>
