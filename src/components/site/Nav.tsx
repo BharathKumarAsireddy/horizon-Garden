@@ -52,16 +52,23 @@ export default function Nav() {
         }}
       >
         <nav className="flex items-center justify-between px-6 py-5">
-          <Link href="/#home" className="flex items-center gap-2.5 text-[#1f2a1d]">
+          <Link
+            href="/#home"
+            className={`flex shrink-0 items-center gap-2 text-[#1f2a1d] transition-[background-color,box-shadow] duration-300 ${
+              solid
+                ? "rounded-full"
+                : "rounded-full border border-white/60 bg-white/70 py-1 pr-3 pl-1 shadow-[0_4px_14px_rgba(31,42,29,0.08)] backdrop-blur-md sm:pr-4 sm:pl-2"
+            }`}
+          >
             <Image
               src="/logo.png"
               alt=""
               width={220}
               height={202}
               priority
-              className="h-12 w-auto"
+              className="h-9 w-auto sm:h-11"
             />
-            <span className="font-display text-[22px] font-semibold tracking-[-0.02em]">
+            <span className="font-display hidden text-[22px] font-semibold tracking-[-0.02em] sm:inline">
               Horizon Gardens
             </span>
           </Link>
