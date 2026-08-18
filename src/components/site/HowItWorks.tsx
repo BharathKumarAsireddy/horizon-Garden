@@ -9,7 +9,7 @@ export default function HowItWorks() {
           How It Works
         </div>
         <h2 className="m-0 text-[clamp(1.9rem,4vw,3rem)] leading-[1.05] font-normal tracking-[-0.03em] text-[#1f2a1d]">
-          Three steps and you&rsquo;re on your way
+          Order your materials in three simple steps.
         </h2>
         <p className="mt-4.5 text-[1.05rem] leading-relaxed text-[#4b5b47]">
           Getting your landscape materials is simple.
