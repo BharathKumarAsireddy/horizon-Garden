@@ -1,6 +1,6 @@
 import { Phone, ArrowRight } from "lucide-react";
 import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/site-data";
-import HeroSlideshow from "./HeroSlideshow";
+import HeroVideo from "./HeroVideo";
 
 export default function Hero() {
   return (
@@ -9,8 +9,8 @@ export default function Hero() {
       className="relative flex min-h-screen w-full flex-col overflow-hidden"
     >
       <div className="absolute inset-0 h-full w-full overflow-hidden">
-        <HeroSlideshow />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(244,241,233,0.68)_0%,rgba(244,241,233,0.6)_20%,rgba(244,241,233,0.42)_45%,rgba(31,42,29,0.3)_68%,rgba(31,42,29,0.62)_100%)]" />
+        <HeroVideo />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(244,241,233,0.42)_0%,rgba(244,241,233,0.36)_20%,rgba(244,241,233,0.24)_45%,rgba(31,42,29,0.18)_68%,rgba(31,42,29,0.52)_100%)]" />
       </div>
 
       {/* HERO COPY */}

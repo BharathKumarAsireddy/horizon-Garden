@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ADDRESS, MAPS_URL, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site-data";
 
 const QUICK_LINKS = [
@@ -20,8 +21,17 @@ export default function Footer() {
     <footer className="bg-[#161f14] px-6 pt-16 pb-8 text-white/75">
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-10 md:grid-cols-[2fr_1fr_1fr_1.2fr]">
         <div>
-          <div className="mb-4 text-xl font-semibold tracking-[-0.02em] text-white">
-            Horizon Gardens
+          <div className="mb-4 flex items-center gap-2.5">
+            <Image
+              src="/logo.png"
+              alt=""
+              width={220}
+              height={202}
+              className="h-12 w-auto"
+            />
+            <span className="font-display text-xl font-semibold tracking-[-0.02em] text-white">
+              Horizon Gardens
+            </span>
           </div>
           <p className="m-0 max-w-[320px] text-sm leading-relaxed">
             Pro-grade landscape plants, flowers, mulch, and bulk materials

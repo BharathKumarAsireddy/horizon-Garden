@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone } from "lucide-react";
@@ -51,14 +52,18 @@ export default function Nav() {
         }}
       >
         <nav className="flex items-center justify-between px-6 py-5">
-          <Link
-            href="/#home"
-            className="flex items-baseline gap-0.5 text-[#1f2a1d]"
-          >
-            <span className="text-[22px] font-semibold tracking-[-0.02em]">
+          <Link href="/#home" className="flex items-center gap-2.5 text-[#1f2a1d]">
+            <Image
+              src="/logo.png"
+              alt=""
+              width={220}
+              height={202}
+              priority
+              className="h-12 w-auto"
+            />
+            <span className="font-display text-[22px] font-semibold tracking-[-0.02em]">
               Horizon Gardens
             </span>
-            <sup className="text-[11px] font-medium">&reg;</sup>
           </Link>
 
           <div className="hidden lg:flex items-center gap-1 rounded-full border border-white/60 bg-white/70 py-[5px] pr-[6px] pl-6 shadow-[0_4px_14px_rgba(31,42,29,0.08)] backdrop-blur-md">

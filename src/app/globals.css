@@ -15,6 +15,7 @@
 
 @theme inline {
   --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
 }
 
 html,
@@ -35,6 +36,13 @@ body {
 @layer base {
   a {
     color: var(--hg-green);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
   }
 }
 
