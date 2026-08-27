@@ -10,7 +10,7 @@ import FinalCta from "@/components/site/FinalCta";
 import Footer from "@/components/site/Footer";
 
 export const metadata: Metadata = {
-  title: "Landscape Plants | Horizon Gardens",
+  title: "Landscape Plants",
   description:
     "Hardy, sun-ready landscape plants picked for South Florida's heat, humidity, and sandy soil.",
 };

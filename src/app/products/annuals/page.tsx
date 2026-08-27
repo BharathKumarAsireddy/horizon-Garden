@@ -10,7 +10,7 @@ import FinalCta from "@/components/site/FinalCta";
 import Footer from "@/components/site/Footer";
 
 export const metadata: Metadata = {
-  title: "Annuals | Horizon Gardens",
+  title: "Annuals",
   description:
     "Fresh annuals that bring fast, vibrant color to your landscape — rotated with the seasons.",
 };

@@ -10,7 +10,7 @@ import FinalCta from "@/components/site/FinalCta";
 import Footer from "@/components/site/Footer";
 
 export const metadata: Metadata = {
-  title: "Topiaries | Horizon Gardens",
+  title: "Topiaries",
   description:
     "Shaped and sculpted topiaries that add instant character to entryways, patios, and gardens.",
 };

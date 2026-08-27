@@ -10,7 +10,7 @@ import Footer from "@/components/site/Footer";
 import { soilTypes, sandTypes } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Soils & Sands | Horizon Gardens",
+  title: "Soils & Sands",
   description:
     "Topsoil, compost blends, and specialty sands — every soil and sand type we carry at our Loxahatchee Groves yard.",
 };

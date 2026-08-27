@@ -10,7 +10,7 @@ import Footer from "@/components/site/Footer";
 import { woodMulchTypes } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Mulch | Horizon Gardens",
+  title: "Mulch",
   description:
     "Wood mulch in every color and finish we carry at our Loxahatchee Groves yard.",
 };

@@ -10,7 +10,7 @@ import FinalCta from "@/components/site/FinalCta";
 import Footer from "@/components/site/Footer";
 
 export const metadata: Metadata = {
-  title: "About Us | Horizon Gardens",
+  title: "About Us",
   description:
     "Horizon Gardens grew out of a 20+ year Palm Beach County landscape company. Meet the team behind the yard in Loxahatchee Groves, FL.",
 };

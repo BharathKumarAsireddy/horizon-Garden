@@ -10,7 +10,7 @@ import Footer from "@/components/site/Footer";
 import { rockAggregateTypes, rockBoulderTypes } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Aggregate | Horizon Gardens",
+  title: "Aggregate",
   description:
     "Rocks and boulders — every aggregate type we carry at our Loxahatchee Groves yard.",
 };

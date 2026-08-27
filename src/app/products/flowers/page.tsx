@@ -10,7 +10,7 @@ import FinalCta from "@/components/site/FinalCta";
 import Footer from "@/components/site/Footer";
 
 export const metadata: Metadata = {
-  title: "Flowers | Horizon Gardens",
+  title: "Flowers",
   description:
     "Seasonal blooms and year-round color to brighten up any yard, garden bed, or planter.",
 };

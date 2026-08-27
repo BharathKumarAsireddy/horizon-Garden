@@ -9,7 +9,7 @@ import FinalCta from "@/components/site/FinalCta";
 import Footer from "@/components/site/Footer";
 
 export const metadata: Metadata = {
-  title: "Products | Horizon Gardens",
+  title: "Products",
   description:
     "Landscape plants, flowers, topiaries, mulch, topsoil, aggregate, and sand — pro-grade materials stocked at our Loxahatchee Groves yard.",
 };
