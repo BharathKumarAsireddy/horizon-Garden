@@ -497,3 +497,8 @@ export const HOURS = [
   { days: "Monday – Saturday", time: "7:30 AM – 4:00 PM" },
   { days: "Sunday", time: "9:00 AM – 3:00 PM" },
 ];
+
+export const INSTAGRAM_URL = "https://www.instagram.com/horizongardens.inc/";
+export const FACEBOOK_URL = "#";
+export const GOOGLE_URL =
+  "https://www.google.com/search?q=Horizon+Gardens+inc.&stick=H4sIAAAAAAAA_-NgU1I1qLCwSLE0SktMS7Y0N04zMjG1MqhIMjdITTWzSE02Nk4ytjQ3XMQq4pFflFmVn6fgnliUkppXrJCZl6wHAIRagbZAAAAA&hl=en&mat=Cdzlq4TZkIn7ElcBa0lj_wJgNt7rldYypXxgNHJaMWV5bOEK5gU9hoVam4msArFzVnhF9ZHx0OirKUzkPz5rxEtTjfeE-g26V9YTyxu2hme4Dm3H6kSDpctoRyi_A6WTX1I&authuser=0";
