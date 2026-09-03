@@ -341,7 +341,7 @@ export const rockAggregateTypes = [
   {
     name: "Brown River Rock",
     color: "#7a5c3e",
-    image: "/materials/brown-river-rock.webp",
+    image: "/materials/brown-river-rock.png",
   },
   { name: "Granite", color: "#8f8f8c", image: "/materials/granite.png" },
 ] as const;
