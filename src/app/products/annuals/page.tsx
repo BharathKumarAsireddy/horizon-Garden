@@ -44,7 +44,7 @@ export default function AnnualsPage() {
           "Annuals are the quickest way to refresh a garden bed or planter — fast-growing, budget-friendly, and available in colors that rotate with the calendar.",
           "We restock regularly so you're never stuck choosing between last season's leftovers.",
         ]}
-        image="https://horizongardensinc.com/wp-content/uploads/2026/04/plant-rattlesnake-calathea.webp"
+        image="/products/annuals.png"
         imageAlt="Rattlesnake calathea annual"
         highlights={[
           "Restocked every season",

@@ -46,8 +46,7 @@ export const products = [
     icon: "leaf",
     category: "Plants & Flowers",
     slug: "annuals",
-    image:
-      "https://horizongardensinc.com/wp-content/uploads/2026/04/plant-rattlesnake-calathea.webp",
+    image: "/products/annuals.png",
   },
   {
     title: "Topiaries",
@@ -55,8 +54,7 @@ export const products = [
     icon: "tree",
     category: "Plants & Flowers",
     slug: "topiaries",
-    image:
-      "https://horizongardensinc.com/wp-content/uploads/2026/04/plant-variegated-ficus.webp",
+    image: "/products/topiary.jpg",
   },
   {
     title: "Mulch",
@@ -64,8 +62,7 @@ export const products = [
     icon: "layers",
     category: "Mulch & Soil",
     slug: "mulch",
-    image:
-      "https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-red.webp",
+    image: "/materials/mulch-red.png",
   },
   {
     title: "Topsoil",
@@ -73,8 +70,7 @@ export const products = [
     icon: "shovel",
     category: "Mulch & Soil",
     slug: "soils-and-sands",
-    image:
-      "https://horizongardensinc.com/wp-content/uploads/2026/04/soil-topsoil.webp",
+    image: "/materials/topsoil.png",
   },
   {
     title: "Aggregate",
@@ -82,8 +78,7 @@ export const products = [
     icon: "mountain",
     category: "Aggregate & Sand",
     slug: "aggregate",
-    image:
-      "https://horizongardensinc.com/wp-content/uploads/2026/04/stone-river-pebbles-tan-01.webp",
+    image: "/materials/river-jack.png",
   },
   {
     title: "Sand",
@@ -113,15 +108,13 @@ export const plantPhotos = [
     slug: "annuals",
     title: "Annuals",
     alt: "Rattlesnake calathea annual",
-    image:
-      "https://horizongardensinc.com/wp-content/uploads/2026/04/plant-rattlesnake-calathea.webp",
+    image: "/products/annuals.png",
   },
   {
     slug: "topiaries",
     title: "Topiaries",
     alt: "Variegated ficus topiary",
-    image:
-      "https://horizongardensinc.com/wp-content/uploads/2026/04/plant-variegated-ficus.webp",
+    image: "/products/topiary.jpg",
   },
 ] as const;
 
@@ -145,27 +138,27 @@ export const productCategories = [
 
 export const mulchVarieties = [
   {
-    src: "https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-red.webp",
+    src: "/materials/mulch-red.png",
     alt: "Red mulch",
   },
   {
-    src: "https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-pine-bark-chunks.webp",
+    src: "/materials/pine-bark.png",
     alt: "Pine bark chunks",
   },
   {
-    src: "https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-natural-wood-chips.webp",
+    src: "/materials/wood-chips.png",
     alt: "Natural wood chips",
   },
   {
-    src: "https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-dark-brown.webp",
+    src: "/materials/brown-mulch.png",
     alt: "Dark brown mulch",
   },
   {
-    src: "https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-cypress.webp",
+    src: "/materials/cypress-blend.png",
     alt: "Cypress mulch",
   },
   {
-    src: "https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-cedar-chips.webp",
+    src: "/materials/cedar-chips.png",
     alt: "Cedar chips mulch",
   },
 ] as const;
@@ -176,63 +169,52 @@ export const mulchVarieties = [
 export const woodMulchTypes = [
   {
     name: "Red Mulch",
-    image:
-      "https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-red.webp",
+    image: "/materials/mulch-red.png",
   },
   {
     name: "Pine Bark Nuggets",
-    image:
-      "https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-pine-bark-chunks.webp",
+    image: "/materials/pine-bark.png",
   },
   {
     name: "Wood Chips",
-    image:
-      "https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-natural-wood-chips.webp",
+    image: "/materials/wood-chips.png",
   },
   {
     name: "Brown Mulch",
-    image:
-      "https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-dark-brown.webp",
+    image: "/materials/brown-mulch.png",
   },
   {
     name: "Cypress Blend",
-    image:
-      "https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-cypress.webp",
+    image: "/materials/cypress-blend.png",
   },
   {
     name: "Cedar Chips",
-    image:
-      "https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-cedar-chips.webp",
+    image: "/materials/cedar-chips.png",
   },
   {
     name: "APS Melaleuca",
     color: "#6b4a35",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/4/49/Red_cedar_mulch_in_New_Jersey_April.jpg",
+    image: "/materials/aps-melaleuca.png",
   },
   {
     name: "Black Mulch",
     color: "#2b2b28",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/2/2d/Black_cedar_mulch_in_New_Jersey_April.jpg",
+    image: "/materials/black-mulch.png",
   },
   {
     name: "Eucalyptus Mulch",
     color: "#7a4a2e",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Wood_Chip_Mulch_Texture_DTXR-WD-CP-1.jpg/1280px-Wood_Chip_Mulch_Texture_DTXR-WD-CP-1.jpg",
+    image: "/materials/eucalyptus-mulch.png",
   },
   {
     name: "Gold Mulch",
     color: "#c98a2b",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Wood_chip_pile.jpg/1280px-Wood_chip_pile.jpg",
+    image: "/materials/gold-mulch.png",
   },
   {
     name: "Recycled Mulch",
     color: "#6e5a44",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Surfaces_woody_mulch_broken_sticks_on_the_ground.JPG/1280px-Surfaces_woody_mulch_broken_sticks_on_the_ground.JPG",
+    image: "/materials/recycled-mulch.png",
   },
 ] as const;
 
@@ -247,37 +229,36 @@ export const soilTypes = [
   {
     name: "Topsoil",
     note: "Screened and ready for beds, new lawns, or grading.",
-    image:
-      "https://horizongardensinc.com/wp-content/uploads/2026/04/soil-topsoil.webp",
+    image: "/materials/topsoil.png",
   },
   {
     name: "Black Cow",
     note: "Composted manure, rich in organic matter and nutrients.",
     color: "#2a1f16",
-    image: "/materials/black-cow.jpg",
+    image: "/materials/black-cow.png",
   },
   {
     name: "Mushroom Compost",
     note: "Organic soil made from spent mushroom-farm substrate.",
     color: "#4a3a28",
-    image: "/materials/mushroom-compost.jpeg",
+    image: "/materials/mushroom-compost.png",
   },
   {
     name: "Potting Soil",
     note: "Peat, pine bark, coarse sand, sawdust, and airlite.",
     color: "#5c4530",
-    image: "/materials/potting-soil.jpg",
+    image: "/materials/potting-soil.png",
   },
   {
     name: "Peat Moss",
     note: "Conditions soil — light texture that holds moisture.",
     color: "#4a3223",
-    image: "/materials/peat-moss.jpg",
+    image: "/materials/peat-moss.png",
   },
   {
     name: "Overburden",
     color: "#8a7050",
-    image: "/materials/overburden-soil.jpg",
+    image: "/materials/overburden-soil.png",
   },
 ] as const;
 
@@ -334,19 +315,18 @@ export const sandTypes = [
 export const rockAggregateTypes = [
   {
     name: "River Jack",
-    image:
-      "https://horizongardensinc.com/wp-content/uploads/2026/04/stone-river-pebbles-tan-01.webp",
+    image: "/materials/river-jack.png",
   },
-  { name: "Amberlite", color: "#c98a3f", image: "/materials/amberlite.jpg" },
+  { name: "Amberlite", color: "#c98a3f", image: "/materials/amberlite.png" },
   {
     name: "Black Slate",
     color: "#2b2b2c",
-    image: "/materials/black-slate.jpeg",
+    image: "/materials/black-slate.png",
   },
   {
     name: "Black Sparkle",
     color: "#1e1e1f",
-    image: "/materials/black-sparkle.jpg",
+    image: "/materials/black-sparkle.png",
   },
   {
     name: "Black Lava Rock",
@@ -356,21 +336,21 @@ export const rockAggregateTypes = [
   {
     name: "Brown Chattahoochee",
     color: "#8a6a4a",
-    image: "/materials/brown-chattahoochee.jpg",
+    image: "/materials/brown-chattahoochee.png",
   },
   {
     name: "Brown River Rock",
     color: "#7a5c3e",
     image: "/materials/brown-river-rock.webp",
   },
-  { name: "Granite", color: "#8f8f8c", image: "/materials/granite.webp" },
+  { name: "Granite", color: "#8f8f8c", image: "/materials/granite.png" },
 ] as const;
 
 export const rockBoulderTypes = [
   {
     name: "Black Slate",
     color: "#2b2b2c",
-    image: "/materials/black-slate.jpeg",
+    image: "/materials/black-slate.png",
   },
 ] as const;
 
@@ -426,23 +406,23 @@ export const faqs = [
 
 export const gallery = [
   {
-    src: "https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-red.webp",
+    src: "/materials/mulch-red.png",
     alt: "Red mulch",
   },
   {
-    src: "https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-pine-bark-chunks.webp",
+    src: "/materials/pine-bark.png",
     alt: "Pine bark chunks",
   },
   {
-    src: "https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-natural-wood-chips.webp",
+    src: "/materials/wood-chips.png",
     alt: "Natural wood chips",
   },
   {
-    src: "https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-dark-brown.webp",
+    src: "/materials/brown-mulch.png",
     alt: "Dark brown mulch",
   },
   {
-    src: "https://horizongardensinc.com/wp-content/uploads/2026/04/mulch-cypress.webp",
+    src: "/materials/cypress-blend.png",
     alt: "Cypress mulch",
   },
   {

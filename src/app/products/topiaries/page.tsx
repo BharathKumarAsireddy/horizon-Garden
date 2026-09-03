@@ -44,7 +44,7 @@ export default function TopiariesPage() {
           "A well-placed topiary does more for curb appeal than almost anything else in the yard — clean, sculpted shapes that frame an entryway or anchor a patio.",
           "We carry shaped ficus and other classic topiary varieties, pruned and ready to drop straight into your landscape.",
         ]}
-        image="https://horizongardensinc.com/wp-content/uploads/2026/04/plant-variegated-ficus.webp"
+        image="/products/topiary.jpg"
         imageAlt="Variegated ficus topiary"
         highlights={[
           "Pruned & shaped, ready to plant",
