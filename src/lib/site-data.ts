@@ -331,7 +331,7 @@ export const rockAggregateTypes = [
   {
     name: "Black Lava Rock",
     color: "#1c1a19",
-    image: "/materials/black-lava-rock.jpg",
+    image: "/materials/black-lava-rock.png",
   },
   {
     name: "Brown Chattahoochee",
