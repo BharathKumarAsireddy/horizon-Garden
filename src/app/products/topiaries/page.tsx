@@ -6,6 +6,8 @@ import PageBanner from "@/components/site/PageBanner";
 import Reveal from "@/components/site/Reveal";
 import ProductFeature from "@/components/site/ProductFeature";
 import MorePlants from "@/components/site/MorePlants";
+import ProductGallery from "@/components/site/ProductGallery";
+import { productGalleries } from "@/lib/gallery";
 import FinalCta from "@/components/site/FinalCta";
 import Footer from "@/components/site/Footer";
 
@@ -54,6 +56,10 @@ export default function TopiariesPage() {
         imageFirst
       />
 
+      <ProductGallery
+        title="Topiaries on the lot"
+        images={productGalleries["topiaries"]}
+      />
       <MorePlants exclude="topiaries" />
       <FinalCta />
       <Footer />

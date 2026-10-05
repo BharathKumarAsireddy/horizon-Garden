@@ -12,7 +12,7 @@ const LINKS = [
   { href: "/#home", id: "home", label: "Home" },
   { href: "/about", id: "about", label: "About" },
   { href: "/products", id: "products", label: "Products" },
-  { href: "/#testimonials", id: "testimonials", label: "Testimonials" },
+  { href: "/gallery", id: "gallery", label: "Gallery" },
   { href: "/#contact", id: "contact", label: "Contact" },
 ];
 
@@ -28,6 +28,8 @@ export default function Nav() {
       ? "about"
       : pathname === "/products"
       ? "products"
+      : pathname === "/gallery"
+      ? "gallery"
       : scrollActive;
   const close = () => setOpen(false);
 

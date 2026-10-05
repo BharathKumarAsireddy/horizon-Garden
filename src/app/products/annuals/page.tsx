@@ -6,6 +6,8 @@ import PageBanner from "@/components/site/PageBanner";
 import Reveal from "@/components/site/Reveal";
 import ProductFeature from "@/components/site/ProductFeature";
 import MorePlants from "@/components/site/MorePlants";
+import ProductGallery from "@/components/site/ProductGallery";
+import { productGalleries } from "@/lib/gallery";
 import FinalCta from "@/components/site/FinalCta";
 import Footer from "@/components/site/Footer";
 
@@ -53,6 +55,10 @@ export default function AnnualsPage() {
         ]}
       />
 
+      <ProductGallery
+        title="Annuals on the benches"
+        images={productGalleries["annuals"]}
+      />
       <MorePlants exclude="annuals" />
       <FinalCta />
       <Footer />

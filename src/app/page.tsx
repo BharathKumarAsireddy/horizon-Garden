@@ -4,7 +4,7 @@ import Stats from "@/components/site/Stats";
 import HowItWorks from "@/components/site/HowItWorks";
 import AboutTeaser from "@/components/site/AboutTeaser";
 import ProductsTeaser from "@/components/site/ProductsTeaser";
-import TestimonialsMarquee from "@/components/site/TestimonialsMarquee";
+import GalleryTeaser from "@/components/site/GalleryTeaser";
 import Faq from "@/components/site/Faq";
 import ContactSection from "@/components/site/ContactSection";
 import VisitUs from "@/components/site/VisitUs";
@@ -19,7 +19,7 @@ export default function Home() {
       <HowItWorks />
       <AboutTeaser />
       <ProductsTeaser />
-      <TestimonialsMarquee />
+      <GalleryTeaser />
       <Faq />
       <VisitUs />
       <ContactSection />
