@@ -95,7 +95,7 @@ export const plantPhotos = [
   {
     slug: "landscape-plants",
     title: "Landscape Plants",
-    alt: "Yucca landscape plant",
+    alt: "Pandanus trees in the Horizon Gardens yard",
     image: "/products/landscape-plant.jpg",
   },
   {

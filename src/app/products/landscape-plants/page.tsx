@@ -47,7 +47,7 @@ export default function LandscapePlantsPage() {
           "Our own crews plant these same varieties on landscaping jobs across the county every week, which means we already know how they perform in full sun, part shade, wet season, and dry season alike.",
         ]}
         image="/products/landscape-plant.jpg"
-        imageAlt="Yucca landscape plant in the Horizon Gardens yard"
+        imageAlt="Pandanus trees in the Horizon Gardens yard"
         highlights={[
           "Bred for heat, humidity & sandy soil",
           "The same stock our own crews install",

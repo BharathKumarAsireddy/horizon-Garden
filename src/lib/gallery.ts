@@ -22,7 +22,7 @@ export const galleryImages: GalleryImage[] = [
   photo(12, "Potted herbs on the bench"),
   photo(13, "Young plants in labeled terracotta-colored pots"),
   photo(14, "The Horizon Gardens yard and pavilion"),
-  photo(15, "Palm trees in the yard under a blue sky"),
+  photo(15, "Pandanus trees in the yard under a blue sky"),
   photo(16, "Glazed ceramic pots and planters"),
   photo(18, "Moss rose with plant sign"),
   photo(19, "Pentas in bloom with plant sign"),
@@ -71,6 +71,6 @@ export const productGalleries = {
   annuals: galleryPhotos([4, 10, 7, 6, 18, 8, 9, 1, 5, 3]),
   topiaries: galleryPhotos([25, 36, 26, 28, 27, 30, 33]),
   "landscape-plants": galleryPhotos([
-    35, 39, 31, 40, 15, 42, 29, 41, 21, 45, 13, 38,
+    35, 39, 31, 40, 42, 29, 41, 21, 45, 13, 38, 43,
   ]),
 };
