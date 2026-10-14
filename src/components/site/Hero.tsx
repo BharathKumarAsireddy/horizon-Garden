@@ -1,41 +1,93 @@
 import { ArrowRight } from "lucide-react";
-import HeroVideo from "./HeroVideo";
+import Image from "next/image";
+
+// Soft-fades the photo's top and left edges into the blurred backdrop so the
+// team shot reads as one continuous background rather than a framed picture.
+const PHOTO_MASK = {
+  maskImage:
+    "linear-gradient(to right, transparent 0%, #000 24%), linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 18%, #000 34%)",
+  WebkitMaskImage:
+    "linear-gradient(to right, transparent 0%, #000 24%), linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 18%, #000 34%)",
+  maskComposite: "intersect",
+  WebkitMaskComposite: "source-in",
+} as const;
+
+const MOBILE_PHOTO_MASK = {
+  maskImage: "linear-gradient(to bottom, #000 70%, transparent 100%)",
+  WebkitMaskImage: "linear-gradient(to bottom, #000 70%, transparent 100%)",
+} as const;
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen w-full overflow-hidden"
+      className="relative min-h-screen w-full overflow-hidden bg-[#141c12]"
     >
-      <div className="absolute inset-0 h-full w-full overflow-hidden">
-        <HeroVideo />
-        {/* Cinematic left-to-right scrim: dark behind the copy, fading to
-            near-transparent so the video stays the visual subject. A faint
-            vertical pass keeps the nav and lower edge legible too. */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(100deg, rgba(17,23,15,0.86) 0%, rgba(17,23,15,0.72) 20%, rgba(17,23,15,0.42) 40%, rgba(17,23,15,0.15) 58%, rgba(17,23,15,0.02) 72%, rgba(17,23,15,0) 88%), linear-gradient(180deg, rgba(10,14,8,0.32) 0%, rgba(10,14,8,0) 18%, rgba(10,14,8,0) 78%, rgba(10,14,8,0.3) 100%)",
-          }}
+      {/* Atmosphere: a heavily blurred copy of the team photo fills the whole
+          hero in the same greens, dimmed so the copy stays legible. */}
+      <div
+        aria-hidden
+        className="absolute inset-0 scale-110 bg-cover bg-center opacity-70 blur-2xl"
+        style={{ backgroundImage: "url(/hero/home-blur.jpg)" }}
+      />
+      <div aria-hidden className="absolute inset-0 bg-[#10160e]/70" />
+
+      {/* Desktop: the photo is anchored bottom-right and sized so the whole
+          crew sits to the right of the copy. */}
+      <div
+        className="absolute right-0 bottom-0 hidden aspect-[16/9] w-[min(74vw,calc(100svh*1.78))] lg:block"
+        style={PHOTO_MASK}
+      >
+        <Image
+          src="/hero/home.jpg"
+          alt="The Horizon Gardens team standing together in the nursery yard"
+          fill
+          preload
+          sizes="74vw"
+          className="object-cover"
         />
       </div>
+      {/* Left-side scrim so the headline has contrast where the photo fades in. */}
+      <div
+        aria-hidden
+        className="absolute inset-0 hidden lg:block"
+        style={{
+          backgroundImage:
+            "linear-gradient(90deg, rgba(14,19,12,0.85) 0%, rgba(14,19,12,0.55) 30%, rgba(14,19,12,0) 50%)",
+        }}
+      />
 
-      {/* HERO COPY */}
-      <div className="relative z-10 flex min-h-screen w-full items-center px-6 py-28 sm:px-12 lg:px-16">
-        <div className="w-full max-w-[760px]">
-          <div className="mb-5 flex items-center gap-2.5 text-[13px] font-semibold tracking-[0.14em] text-[#e8895a] uppercase [text-shadow:0_1px_6px_rgba(0,0,0,0.5)]">
+      <div className="relative z-10 flex min-h-screen w-full flex-col lg:flex-row lg:items-center">
+        {/* Mobile/tablet: photo bleeds edge to edge at the top, fading down
+            into the copy. */}
+        <div
+          className="relative aspect-[16/9] w-full lg:hidden"
+          style={MOBILE_PHOTO_MASK}
+        >
+          <Image
+            src="/hero/home.jpg"
+            alt=""
+            fill
+            loading="eager"
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+
+        {/* HERO COPY */}
+        <div className="-mt-6 flex w-full max-w-[720px] flex-1 flex-col justify-center px-6 pb-16 sm:px-12 lg:mt-0 lg:flex-none lg:px-16 lg:py-28">
+          <div className="mb-5 flex items-center gap-2.5 text-[12px] lg:whitespace-nowrap font-semibold tracking-[0.14em] text-[#e8895a] uppercase sm:text-[13px]">
             <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#e8895a]" />
             Loxahatchee Groves, FL &bull; Landscape Supply Yard
           </div>
 
-          <h1 className="m-0 text-[clamp(2.3rem,4.6vw,4.1rem)] leading-[1.08] font-normal tracking-[-0.02em] text-[#f4ecd8] [text-shadow:0_4px_28px_rgba(0,0,0,0.5),0_1px_4px_rgba(0,0,0,0.45)]">
+          <h1 className="m-0 text-[clamp(2.3rem,3.3vw,3.6rem)] leading-[1.08] font-normal tracking-[-0.02em] text-[#f4ecd8] [text-shadow:0_2px_18px_rgba(0,0,0,0.45)]">
             South Florida&rsquo;s
             <br />
             Landscape Supply Yard
           </h1>
 
-          <p className="mt-6 max-w-[480px] text-[clamp(1rem,1.4vw,1.15rem)] leading-relaxed font-medium text-[#f4ecd8]/92 [text-shadow:0_1px_10px_rgba(0,0,0,0.45),0_1px_3px_rgba(0,0,0,0.4)]">
+          <p className="mt-6 max-w-[460px] text-[clamp(1rem,1.2vw,1.1rem)] leading-relaxed font-medium text-[#f4ecd8]/85">
             Pro-grade plants, flowers, mulch &amp; landscape materials —
             locally sourced and ready for pickup or delivery. Open to
             everyone.

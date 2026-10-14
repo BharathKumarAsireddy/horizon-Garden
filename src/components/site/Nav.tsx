@@ -40,7 +40,7 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Non-home pages have no video hero behind the nav, so keep it solid always.
+  // Non-home pages have no dark hero behind the nav, so keep it solid always.
   const solid = scrolled || pathname !== "/";
 
   return (
@@ -100,7 +100,11 @@ export default function Nav() {
           <div className="flex items-center gap-3 text-[#2d3a2a] sm:gap-4">
             <a
               href={`tel:${PHONE_TEL}`}
-              className="hidden sm:flex items-center gap-2 text-sm font-semibold text-[#12190f] [text-shadow:0_1px_3px_rgba(244,241,233,0.85)] transition-opacity hover:opacity-80"
+              className={`hidden sm:flex items-center gap-2 text-sm font-semibold transition-opacity hover:opacity-80 ${
+                solid
+                  ? "text-[#12190f]"
+                  : "rounded-full bg-[#141c12]/45 px-3 py-1.5 text-[#f4ecd8] backdrop-blur-md"
+              }`}
             >
               <Phone size={16} />
               {PHONE_DISPLAY}
