@@ -465,6 +465,8 @@ export const areas = [
   "Lake Clarke Shores",
 ];
 
+export const SITE_URL = "https://www.horizonsgardens.com";
+
 export const PHONE_DISPLAY = "(561) 818-7800";
 export const PHONE_TEL = "5618187800";
 export const ADDRESS = "230 D Rd, Loxahatchee Groves, FL 33470";

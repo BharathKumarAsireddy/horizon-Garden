@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { INSTAGRAM_URL, PHONE_TEL } from "@/lib/site-data";
+import { INSTAGRAM_URL, PHONE_TEL, SITE_URL } from "@/lib/site-data";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -16,7 +16,7 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://horizonsgardens.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Horizon Gardens | South Florida Landscape Supply Yard",
     template: "%s | Horizon Gardens",
@@ -39,7 +39,7 @@ const localBusinessSchema = {
   name: "Horizon Gardens",
   legalName: "Horizon Gardens Inc.",
   description: metadata.description,
-  url: "https://horizonsgardens.com",
+  url: SITE_URL,
   telephone: `+1${PHONE_TEL}`,
   address: {
     "@type": "PostalAddress",

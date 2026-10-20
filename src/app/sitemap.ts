@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const BASE_URL = "https://horizonsgardens.com";
+import { SITE_URL } from "@/lib/site-data";
 
 const PRODUCT_SLUGS = [
   "landscape-plants",
@@ -16,27 +15,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   return [
-    { url: BASE_URL, lastModified: now, changeFrequency: "weekly", priority: 1 },
+    { url: SITE_URL, lastModified: now, changeFrequency: "weekly", priority: 1 },
     {
-      url: `${BASE_URL}/about`,
+      url: `${SITE_URL}/about`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${BASE_URL}/products`,
+      url: `${SITE_URL}/products`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${BASE_URL}/gallery`,
+      url: `${SITE_URL}/gallery`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     ...PRODUCT_SLUGS.map((slug) => ({
-      url: `${BASE_URL}/products/${slug}`,
+      url: `${SITE_URL}/products/${slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.6,
