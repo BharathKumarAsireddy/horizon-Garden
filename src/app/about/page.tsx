@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "About Us",
   description:
     "Horizon Gardens grew out of a 20+ year Palm Beach County landscape company. Meet the team behind the yard in Loxahatchee Groves, FL.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

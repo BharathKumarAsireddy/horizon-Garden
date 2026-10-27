@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   title: "Annuals",
   description:
     "Fresh annuals that bring fast, vibrant color to your landscape — rotated with the seasons.",
+  alternates: { canonical: "/products/annuals" },
 };
 
 export default function AnnualsPage() {

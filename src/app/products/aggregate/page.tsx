@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Aggregate",
   description:
     "Rocks and boulders — every aggregate type we carry at our Loxahatchee Groves yard.",
+  alternates: { canonical: "/products/aggregate" },
 };
 
 export default function AggregatePage() {

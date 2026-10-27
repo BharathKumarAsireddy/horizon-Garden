@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   title: "Topiaries",
   description:
     "Shaped and sculpted topiaries that add instant character to entryways, patios, and gardens.",
+  alternates: { canonical: "/products/topiaries" },
 };
 
 export default function TopiariesPage() {

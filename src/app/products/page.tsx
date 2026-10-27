@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Products",
   description:
     "Landscape plants, flowers, topiaries, mulch, topsoil, aggregate, and sand — pro-grade materials stocked at our Loxahatchee Groves yard.",
+  alternates: { canonical: "/products" },
 };
 
 export default function ProductsPage() {

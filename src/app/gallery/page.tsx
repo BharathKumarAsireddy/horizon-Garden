@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Gallery",
   description:
     "Take a look around the Horizon Gardens yard in Loxahatchee Groves, FL — flowers, annuals, topiaries, landscape plants and more.",
+  alternates: { canonical: "/gallery" },
 };
 
 export default function GalleryPage() {

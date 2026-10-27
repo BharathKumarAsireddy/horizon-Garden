@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   title: "Landscape Plants",
   description:
     "Hardy, sun-ready landscape plants picked for South Florida's heat, humidity, and sandy soil.",
+  alternates: { canonical: "/products/landscape-plants" },
 };
 
 export default function LandscapePlantsPage() {

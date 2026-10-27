@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Mulch",
   description:
     "Wood mulch in every color and finish we carry at our Loxahatchee Groves yard.",
+  alternates: { canonical: "/products/mulch" },
 };
 
 export default function MulchPage() {

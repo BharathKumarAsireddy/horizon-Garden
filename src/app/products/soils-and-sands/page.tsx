@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Soils & Sands",
   description:
     "Topsoil, compost blends, and specialty sands — every soil and sand type we carry at our Loxahatchee Groves yard.",
+  alternates: { canonical: "/products/soils-and-sands" },
 };
 
 export default function SoilsAndSandsPage() {

@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   title: "Flowers",
   description:
     "Seasonal blooms and year-round color to brighten up any yard, garden bed, or planter.",
+  alternates: { canonical: "/products/flowers" },
 };
 
 export default function FlowersPage() {
